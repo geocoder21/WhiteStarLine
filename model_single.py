@@ -5,7 +5,7 @@ import bs4
 
 
 # create an iceberg environment
-def create_environment(filename):
+def create_lidar():
     lidar_single = []
 
     lidar1 = requests.get('https://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part9/data.html')
