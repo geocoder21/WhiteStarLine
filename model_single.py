@@ -3,7 +3,6 @@ import tkinter
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
 
 # import icebergclass
 import data_IO
