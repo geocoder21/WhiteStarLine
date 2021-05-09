@@ -84,10 +84,10 @@ else:
 root = tkinter.Tk()
 root.wm_title("Iceberg tow model")
 
-# create a new figure
-fig = plt.figure(figsize=(7, 7))
-ax = fig.add_axes([0, 0, 1, 1])
-# ax.set_autoscale_on(False)
+# create new figures
+fig, (plot1, plot2) = plt.subplots(1,2,figsize=(8, 4))
+# ax = fig.add_axes([0, 0, 1, 1])
+# # ax.set_autoscale_on(False)
 
 # make a canvas
 canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
@@ -106,9 +106,20 @@ if ice_pull(total_mass) == True:
 else:
     text.insert(tkinter.END,"Iceberg is too large to be towed")
 
-plt.ylim(0, 300)                        # y dimension limit
-plt.xlim(0, 300)                        # x dimension limit
-plt.imshow(new_radar, cmap="plasma")
+# plt.ylim(0, 300)                        # y dimension limit
+# plt.xlim(0, 300)                        # x dimension limit
+
+plot1.set_ylim(300, 0)                        # y dimension limit
+plot1.set_xlim(0, 300)                        # x dimension limit
+plot1.set_title("Radar data")
+plot1.imshow(new_radar, cmap="plasma")
+
+plot2.set_ylim(300, 0)                        # y dimension limit
+plot2.set_xlim(0, 300)                        # x dimension limit
+plot2.set_title("Lidar data")
+plot2.imshow(new_lidar, cmap="plasma")
+
+
 # plt.imshow(new_lidar)
 canvas.draw()
 
