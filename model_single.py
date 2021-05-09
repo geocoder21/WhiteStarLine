@@ -41,26 +41,24 @@ def ice_pull(mass):
 
 # set up backend correctly before fig is created
 matplotlib.use('TkAgg')
-# sns.set_theme()
+
 
 # IMPORT RADAR AND LIDAR DATA
 
 new_radar = data_IO.create_radar()
-# print("Radar values")
-# print(new_radar)
+# print(new_radar)                          # Test
 # print()
 
 new_lidar = data_IO.create_lidar()
-# print("Lidar values")
-# print(new_lidar)
+# print(new_lidar)                          # Test
 
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
-# print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))      # Test: expecting 65
-print(find_volume(new_radar, new_lidar))
+# print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))      # Test data: expecting 65
+# print(find_volume(new_radar, new_lidar))                          # Test: expecting 14,415.5
 mass_above = (find_volume(new_radar, new_lidar))*density
-# print(mass_above)
+# print(mass_above)                                                 # Test: expecting 12,973,950
 
 
 # CALCULATE TOTAL ICEBERG MASS
@@ -68,7 +66,8 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 # 10% of mass is above water, 90% below
 # so total iceberg mass = mass above sea * 10
 total_mass = mass_above*10
-print("Total iceberg mass {} kg".format(total_mass))
+# print(total_mass)                          # Test: expecting 129,739,500 and match with GUI
+
 
 # DISPLAY total mass, total volume and whether iceberg can be pulled on GUI
 
@@ -115,8 +114,6 @@ plot2.set_xlabel("X")
 plot2.set_ylabel("Y")
 plot2.imshow(new_lidar, cmap="plasma")
 
-
-# plt.imshow(new_lidar)
 canvas.draw()
 
 tkinter.mainloop()
