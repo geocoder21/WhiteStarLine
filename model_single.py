@@ -28,7 +28,7 @@ def find_volume(radar, lidar):
 # MAIN PROGRAMME
 # ******************************************************************************************************************************
 
-# 1. Pull in lidar and radar data files
+# IMPORT RADAR AND LIDAR DATA
 
 new_radar = data_IO.create_radar()
 # print("Radar values")
@@ -40,32 +40,30 @@ new_lidar = data_IO.create_lidar()
 # print(new_lidar)
 
 #################################################
-# Assess which areas are ice using radar data
-# Assess total mass of ice above sea level
+# ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
 # print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))      # Test: expecting 65
 print(find_volume(new_radar, new_lidar))
 mass_above = (find_volume(new_radar, new_lidar))*density
 # print(mass_above)
 
-# Calculate total iceberg mass
-
+# CALCULATE TOTAL ICEBERG MASS
 # 10% of mass is above water, 90% below
 # so total iceberg mass = mass above sea * 10
 total_mass = mass_above*10
-print("Total mass is {} kg".format(total_mass))
+print("Total iceberg mass equals {} kg".format(total_mass))
 
 #################################################
-# 4. Calculate whether iceberg can be pulled
+# CALCULATE WHETHER ICEBERG CAN BE PULLED
 
 # bergs with total mass < 36 million kg can be pulled
 
 #################################################
-# 5. Display total mass, total volume and whether iceberg can be pulled on GUI
+# 5. DISPLAY total mass, total volume and whether iceberg can be pulled on GUI
 
 # plt.ylim(0, 300)                        # y dimension limit
 # plt.xlim(0, 300)                        # x dimension limit
-# # plt.imshow(new_radar)
+# plt.imshow(new_radar)
 # plt.imshow(new_lidar)
 # plt.show()
 
