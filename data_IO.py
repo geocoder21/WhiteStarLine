@@ -1,8 +1,6 @@
  # IMPORTS
 
-import requests
 import csv
-# from bs4 import BeautifulSoup
 import pandas
 import matplotlib.pyplot as plt
 
@@ -36,9 +34,6 @@ def create_lidar():
     lidar_lst = []
     # Set URL of csv file
     url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
-    
-   
-    # Get data using pandas library
     
     # Get data via URL request into a pandas DataFrame
     lidar_data=pandas.read_csv(url_lid)
