@@ -1,14 +1,17 @@
  # IMPORTS
+
 import requests
 import csv
 # from bs4 import BeautifulSoup
 import pandas
 import matplotlib.pyplot as plt
 
-
+# *********************************************************************************************************************************************
 # FUNCTIONS
 
-# read in radar data (single iceberg)
+
+# Read in radar data (single iceberg)
+
 def create_radar():
     # Initiate variable
     radar_lst = []
@@ -22,12 +25,12 @@ def create_radar():
     radar_data=pandas.read_csv(url_rad)
     # Extract data from DataFrame and convert to 2D list
     radar_lst=radar_data.values.tolist()
-    
-    # return radar data as a list of lists with integer values
+        # return radar data as a list of lists with integer values
     return(radar_lst)
 
 
-# # read in lidar data (single iceberg)
+# Read in lidar data (single iceberg)
+
 def create_lidar():
     # initiate variable
     lidar_lst = []
@@ -41,17 +44,10 @@ def create_lidar():
     lidar_data=pandas.read_csv(url_lid)
     # Extract data from DataFrame and convert to 2D list
     lidar_lst=lidar_data.values.tolist()
-    # #############################################################
-
-    # Now we can return our radar data as a list of lists with integer values
+    # return lidar data as a list of lists with integer values
     return(lidar_lst)
 
-new_radar = create_radar()
-print(new_radar)
-plt.imshow(new_radar)
-plt.show()
 
-new_lidar = create_lidar()
-print(new_lidar)
-plt.imshow(new_lidar)
-plt.show()
+# Read out data to a file
+# def write_out():           
+# end_data=pandas.to_csv('Data_out.csv', newline=' ')            # TO BE DONE

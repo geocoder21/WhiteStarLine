@@ -1,0 +1,11 @@
+REFERENCES AND USEFUL LINKS
+
+PANDAS
+
+Cheat sheet here: https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf 
+
+IO guide: https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html
+
+Reading csv into DataFrame: https://pandas.pydata.org/docs/reference/io.html 
+                            https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv
+                            https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
