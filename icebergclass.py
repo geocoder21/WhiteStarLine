@@ -3,15 +3,19 @@ class Iceberg():
     """Icebergs have coordinates (1m pixel square), height in m, mass if kg, and volume in m3. 
     Those less than 36mil kg mass can be pulled by an iceberg tug"""
 
-    def __init__(self, y=none, x=none, height, volume, pull):
-        self.y = y           # from ice yes_or_no function
-        self.x = x           # from ice yes_or_no function
-        self.height = pass      # from lidar data
-        self.volume = volume    # maths
-        self.pull = pass        # bool.  If mass less than 36 million kg = True.
+    def __init__(self):
+        self.corner = corner    # from find_corner function
+        
     
-    
-
-    def volume(self):
-        return(area*height)     # area of each ice pixel = lidar height.  Need to add pixels together
-      
+# create a method to find iceberg corners
+    def find_corner(self):
+        for y in range(len(radar)):
+            for x in range(len(radar[self.y])):
+                if radar[self.y][self.x] >= 100:
+                    if radar[self.y+1][self.x] or radar[self.y][self.x+1]<=100:
+                        corner==True
+                    elif radar[self.y-1][self.x] or radar[self.y][self.x-1]<=100:
+                        corner==True
+                    else:
+                        corner==False
+        return(corner)
