@@ -3,7 +3,7 @@ import tkinter
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
-# import seaborn as sns
+from mpl_toolkits import mplot3d
 
 # import icebergclass
 import data_IO
@@ -14,6 +14,7 @@ density = 900
 
 # FUNCTIONS
 
+# find total volume of ice
 def find_volume(radar, lidar):
     # radar value >=100 is ice
     # 10 lidar units = 1m
@@ -27,7 +28,7 @@ def find_volume(radar, lidar):
                 volume += (lidar[y][x]/10) 
     return(volume)
 
-
+# assess whether the iceberg can be towed
 def ice_pull(mass):
     if mass < 36000000:
         True
@@ -69,15 +70,6 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 total_mass = mass_above*10
 print("Total iceberg mass {} kg".format(total_mass))
 
-
-# CALCULATE WHETHER ICEBERG CAN BE PULLED
-
-# bergs with total mass < 36 million kg can be pulled
-if ice_pull(total_mass) == True:
-    print("Iceberg can be towed")
-else:
-    print("Iceberg is too large to be towed")
-
 # DISPLAY total mass, total volume and whether iceberg can be pulled on GUI
 
 # GUI code
@@ -112,11 +104,15 @@ else:
 plot1.set_ylim(300, 0)                        # y dimension limit
 plot1.set_xlim(0, 300)                        # x dimension limit
 plot1.set_title("Radar data")
+plot1.set_xlabel("X")
+plot1.set_ylabel("Y")
 plot1.imshow(new_radar, cmap="plasma")
 
 plot2.set_ylim(300, 0)                        # y dimension limit
 plot2.set_xlim(0, 300)                        # x dimension limit
 plot2.set_title("Lidar data")
+plot2.set_xlabel("X")
+plot2.set_ylabel("Y")
 plot2.imshow(new_lidar, cmap="plasma")
 
 
