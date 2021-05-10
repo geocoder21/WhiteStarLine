@@ -10,7 +10,7 @@ import data_IO
 
 # MODEL PARAMETERS
 density = 900
-# ice = []
+ice = []
 
 
 # FUNCTIONS
@@ -25,7 +25,7 @@ def find_volume(radar, lidar):
     for y in range(len(radar)):
         for x in range(len(radar[y])):
             if radar[y][x] >= 100:
-                # ice = True
+                ice.append(radar[y][x])
                 volume += (lidar[y][x]/10) 
     return(volume)
 
@@ -101,7 +101,7 @@ else:
 # add quit button
 button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy', fg='white')
 button.pack()
-button.place(x=770, y=415)
+button.place(x=750, y=410)
 
 # plot radar data in subplot 1
 plot1.set_ylim(300, 0)                        # y dimension limit
