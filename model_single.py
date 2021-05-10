@@ -3,6 +3,7 @@ import tkinter as tk
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
+import timeit
 
 import data_IO
 # import icebergclass
@@ -10,8 +11,7 @@ import data_IO
 
 # MODEL PARAMETERS
 density = 900
-# ice = []
-
+lidperm = 10            # lidar units per metre
 
 # FUNCTIONS
 
@@ -25,8 +25,7 @@ def find_volume(radar, lidar):
     for y in range(len(radar)):
         for x in range(len(radar[y])):
             if radar[y][x] >= 100:
-                # ice = True
-                volume += (lidar[y][x]/10) 
+                volume += (lidar[y][x]/lidperm) 
     return(volume)
 
 # assess whether the iceberg can be towed
@@ -69,7 +68,7 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 total_mass = mass_above*10
 # print(total_mass)                                     # Test: expecting 129,739,500 and match with GUI
 
-# -------------------------------------------------------------------
+
 # DISPLAY TOTAL MASS, VOLUME AND WHETHER ICEBERG CAN BE PULLED ON GUI
 
 
@@ -90,7 +89,7 @@ text = tk.Text(root, height=4, width=45, fg='navy')
 text.pack()
 text.insert(tk.END, "Total iceberg mass = " + str(total_mass) + " kg")
 text.insert(tk.END, '\n')
-text.insert(tk.END, "Total iceberg volume = " + str(total_mass/900) + " m3")
+text.insert(tk.END, "Total iceberg volume = " + str(total_mass/density) + " m3")
 text.insert(tk.END, '\n')
 text.insert(tk.END, '\n')
 if ice_pull(total_mass) == True:
@@ -124,3 +123,21 @@ canvas.draw()
 tk.mainloop()
 
 # SAVE INFORMATION TO A FILE
+
+
+# TESTING AND TIMING 
+
+if __name__ == "__main__":
+    print("Timing for find_volume:")
+    x = timeit.timeit("find_volume(new_radar, new_lidar)",
+                    setup="from __main__ import find_volume,"
+                    "new_radar, new_lidar",
+                    number=1)
+    print("{:15.15f}".format(x))                # Test: approx 0.013 seconds
+
+    print("Timing for ice_pull:")
+    y = timeit.timeit("ice_pull(total_mass)",
+                    setup="from __main__ import ice_pull,"
+                    "total_mass",
+                    number=1)
+    print("{:15.15f}".format(y))                # Test: approx 0.0000031 seconds
