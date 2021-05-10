@@ -1,5 +1,5 @@
 # IMPORTS
-import tkinter 
+import tkinter as tk
 import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
@@ -65,40 +65,43 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 # 10% of mass is above water, 90% below
 # so total iceberg mass = mass above sea * 10
 total_mass = mass_above*10
-# print(total_mass)                          # Test: expecting 129,739,500 and match with GUI
+# print(total_mass)                                     # Test: expecting 129,739,500 and match with GUI
 
 
-# DISPLAY total mass, total volume and whether iceberg can be pulled on GUI
+# DISPLAY TOTAL MASS, VOLUME AND WHETHER ICEBERG CAN BE PULLED ON GUI
 
-# GUI code
-root = tkinter.Tk()
+
+# set up GUI with root and title
+root = tk.Tk()
 root.wm_title("Iceberg tow model")
 
-# create new figures
-fig, (plot1, plot2) = plt.subplots(1,2,figsize=(8, 4))
+# create new figure with subplots
+fig, (plot1, plot2) = plt.subplots(1,2,figsize=(9, 4))
 # ax = fig.add_axes([0, 0, 1, 1])
-# # ax.set_autoscale_on(False)
 
 # make a canvas
 canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
-canvas._tkcanvas.pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
 # add text widget to display data
-text = tkinter.Text(root, height=4, width=40, fg='navy')
+text = tk.Text(root, height=4, width=45, fg='navy')
 text.pack()
-text.insert(tkinter.END, "Total iceberg mass = " + str(total_mass) + " kg")
-text.insert(tkinter.END, '\n')
-text.insert(tkinter.END, "Total iceberg volume = " + str(total_mass/900) + " m3")
-text.insert(tkinter.END, '\n')
-text.insert(tkinter.END, '\n')
+text.insert(tk.END, "Total iceberg mass = " + str(total_mass) + " kg")
+text.insert(tk.END, '\n')
+text.insert(tk.END, "Total iceberg volume = " + str(total_mass/900) + " m3")
+text.insert(tk.END, '\n')
+text.insert(tk.END, '\n')
 if ice_pull(total_mass) == True:
-    text.insert(tkinter.END,"Iceberg can be towed")
+    text.insert(tk.END,"Iceberg can be towed")
 else:
-    text.insert(tkinter.END,"Iceberg is too large to be towed")
+    text.insert(tk.END,"Iceberg is too large to be towed")
 
-# plt.ylim(0, 300)                        # y dimension limit
-# plt.xlim(0, 300)                        # x dimension limit
+# add quit button
+button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy', fg='white')
+button.pack()
+button.place(x=750, y=410)
 
+# plot radar data in subplot 1
 plot1.set_ylim(300, 0)                        # y dimension limit
 plot1.set_xlim(0, 300)                        # x dimension limit
 plot1.set_title("Radar data")
@@ -106,6 +109,7 @@ plot1.set_xlabel("X")
 plot1.set_ylabel("Y")
 plot1.imshow(new_radar, cmap="plasma")
 
+# plot lidar data in subplot 2
 plot2.set_ylim(300, 0)                        # y dimension limit
 plot2.set_xlim(0, 300)                        # x dimension limit
 plot2.set_title("Lidar data")
@@ -115,6 +119,6 @@ plot2.imshow(new_lidar, cmap="plasma")
 
 canvas.draw()
 
-tkinter.mainloop()
+tk.mainloop()
 
 # SAVE INFORMATION TO A FILE

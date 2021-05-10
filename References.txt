@@ -10,11 +10,18 @@ Reading csv into DataFrame: https://pandas.pydata.org/docs/reference/io.html
                             https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv
                             https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 
-Text widget in tkinter:     https://www.geeksforgeeks.org/python-tkinter-text-widget/
+MATPLOTLIB 
 
 Colour in matplotlib:       https://matplotlib.org/stable/gallery/color/colormap_reference.html
                             https://matplotlib.org/stable/gallery/color/named_colors.html
                             
 Subplots in matplotlib:     https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes
+
+
+TKINTER 
+
+Text widget in tkinter:     https://www.geeksforgeeks.org/python-tkinter-text-widget/
+
+Adding a quit button to tk: https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/
 
       

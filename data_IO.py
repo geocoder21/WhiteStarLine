@@ -15,7 +15,7 @@ def create_radar():
     radar_lst = []
     # Set URL of csv file
     url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.radar'
-  
+    # url_rad2 = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white2.radar'
     # Get data using pandas library
     # used instead of requests module + csv reader as more efficient code
 
@@ -34,10 +34,11 @@ def create_lidar():
     lidar_lst = []
     # Set URL of csv file
     url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
+    # url_lid2 = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white2.lidar'
     
     # Get data via URL request into a pandas DataFrame
     lidar_data=pandas.read_csv(url_lid)
-    # Extract data from DataFrame and convert to 2D list
+        # Extract data from DataFrame and convert to 2D list
     lidar_lst=lidar_data.values.tolist()
     # return lidar data as a list of lists with integer values
     return(lidar_lst)
