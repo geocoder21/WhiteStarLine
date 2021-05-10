@@ -12,6 +12,11 @@ import data_IO
 # MODEL PARAMETERS
 density = 900
 lidperm = 10            # lidar units per metre
+results = []
+ice_radar = 0
+url_rad2 = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white2.radar'
+url_lid2 = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white2.lidar'
+
 
 # FUNCTIONS
 
@@ -27,6 +32,26 @@ def find_volume(radar, lidar):
             if radar[y][x] >= 100:
                 volume += (lidar[y][x]/lidperm) 
     return(volume)
+
+# define which areas are ice and add them on to a list
+# *** DOESN'T YET WORK ***
+def find_ice(radar):
+    for y in range(1, len(radar), -1):
+        for x in range(1, len(radar[y]), -1):
+            ice= False
+            if(radar[y-1][x-1]>=100): ice = True
+            if(radar[y-1][x]>=100): ice = True
+            if(radar[y-1][x+1]>=100): ice = True
+            if(radar[y][x-1]>=100): ice = True
+            if(radar[y][x]>=100): ice = True
+            if(radar[y][x+1]>=100): ice = True
+            if(radar[y+1][x-1]>=100): ice = True
+            if(radar[y+1][x]>=100): ice = True
+            if(radar[y+1][x+1]>=100): ice = True
+            if(ice==True) and (radar[y][x]>0):
+                ice_radar[y][x] +=1
+    print(ice_radar)
+    return(ice_radar)
 
 # assess whether the iceberg can be towed
 def ice_pull(mass):
@@ -45,13 +70,15 @@ matplotlib.use('TkAgg')
 
 # IMPORT RADAR AND LIDAR DATA
 
-new_radar = data_IO.create_radar()
+new_radar = data_IO.create_radar(url_rad2)
 # print(new_radar)                          # Test
 # print()
 
-new_lidar = data_IO.create_lidar()
+new_lidar = data_IO.create_lidar(url_lid2)
 # print(new_lidar)                          # Test
 
+# find the ice
+find_ice(new_radar)
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
