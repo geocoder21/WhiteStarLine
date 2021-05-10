@@ -12,6 +12,9 @@ import data_IO
 # MODEL PARAMETERS
 density = 900
 lidperm = 10            # lidar units per metre
+url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.radar'
+url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
+
 
 # FUNCTIONS
 
@@ -45,11 +48,11 @@ matplotlib.use('TkAgg')
 
 # IMPORT RADAR AND LIDAR DATA
 
-new_radar = data_IO.create_radar()
+new_radar = data_IO.create_radar(url_rad)
 # print(new_radar)                          # Test
 # print()
 
-new_lidar = data_IO.create_lidar()
+new_lidar = data_IO.create_lidar(url_lid)
 # print(new_lidar)                          # Test
 
 
