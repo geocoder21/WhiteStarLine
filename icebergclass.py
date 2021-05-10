@@ -6,7 +6,11 @@ class Iceberg():
     def __init__(self):
         self.corner = corner    # from find_corner function
         
-    
+# name / ID 
+# coordinates
+# mass
+# volume
+
 # create a method to find iceberg corners
     def find_corner(self):
         for y in range(len(radar)):

@@ -10,8 +10,9 @@ import data_IO
 
 
 # MODEL PARAMETERS
-density = 900
+density = 900           # density of ice in kg/m3
 lidperm = 10            # lidar units per metre
+max_tow = 36000000      # maximum towable mass in kg
 url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.radar'
 url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
 
@@ -33,7 +34,7 @@ def find_volume(radar, lidar):
 
 # assess whether the iceberg can be towed
 def ice_pull(mass):
-    if mass < 36000000:
+    if mass < max_tow:
         True
     else:
         False
@@ -72,8 +73,7 @@ total_mass = mass_above*10
 # print(total_mass)                                     # Test: expecting 129,739,500 and match with GUI
 
 
-# DISPLAY TOTAL MASS, VOLUME AND WHETHER ICEBERG CAN BE PULLED ON GUI
-
+# DISPLAY 
 
 # set up GUI with root and title
 root = tk.Tk()
@@ -125,7 +125,7 @@ canvas.draw()
 
 tk.mainloop()
 
-# SAVE INFORMATION TO A FILE
+# SAVE INFORMATION TO A FILE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 # TESTING AND TIMING 
@@ -136,11 +136,11 @@ if __name__ == "__main__":
                     setup="from __main__ import find_volume,"
                     "new_radar, new_lidar",
                     number=1)
-    print("{:15.15f}".format(x))                # Test: approx 0.013 seconds
+    print("{:15.15f}".format(x))                # Test: approx 0.013 to 0.015 seconds
 
     print("Timing for ice_pull:")
     y = timeit.timeit("ice_pull(total_mass)",
                     setup="from __main__ import ice_pull,"
                     "total_mass",
                     number=1)
-    print("{:15.15f}".format(y))                # Test: approx 0.0000031 seconds
+    print("{:15.15f}".format(y))                # Test: approx 0.000003 seconds

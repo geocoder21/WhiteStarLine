@@ -29,3 +29,8 @@ Adding a quit button to tk: https://www.delftstack.com/howto/python-tkinter/how-
 
 Lecture notes:              https://www.geog.leeds.ac.uk/courses/computing/study/advanced-python/part9/index.html
  Practical :                https://www.geog.leeds.ac.uk/courses/computing/practicals/python/ca/introduction/index.html
+
+
+RECURSIVE FLOOD FILL ALGORITHM
+
+Zombies and Cats:           http://inventwithpython.com/blog/2011/08/11/recursion-explained-with-the-flood-fill-algorithm-and-zombies-and-cats/

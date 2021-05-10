@@ -35,7 +35,7 @@ def find_volume(radar, lidar):
 
 # define which areas are ice and add them on to a list
 # *** DOESN'T YET WORK ***
-def find_ice(radar):
+def find_ice(radar, ice_radar):
     for y in range(1, len(radar), -1):
         for x in range(1, len(radar[y]), -1):
             ice= False
@@ -78,7 +78,8 @@ new_lidar = data_IO.create_lidar(url_lid2)
 # print(new_lidar)                          # Test
 
 # find the ice
-find_ice(new_radar)
+find_ice(new_radar, ice_radar)
+
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
