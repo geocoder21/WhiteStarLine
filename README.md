@@ -19,7 +19,7 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 ## Usage
 
 ### Context
-The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html), to prevent collisions with icebergs for a shipping company. 
+The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html) to prevent collisions with icebergs for a shipping company. 
 
 #### Other applications
 1. The program could be used to protect immovable objects at sea (such as wind farms and drilling platforms).  
