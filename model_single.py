@@ -1,3 +1,7 @@
+"""This model pulls in radar and lidar data from specified locations to assess whether there is an iceberg 
+within the specified 300m x 300m area.  The programme then uses dimensions to calculate total iceberg mass 
+and volume and whether it could be pulled by an iceberg-towing tug.  The code is written in Python."""
+
 # IMPORTS
 import tkinter as tk
 import numpy as np
@@ -34,6 +38,7 @@ def find_volume(radar, lidar):
                 volume += (lidar[y][x]/lidperm) 
     return(volume)
 
+
 # assess whether the iceberg can be towed
 def ice_pull(mass):
     if mass < max_tow:
@@ -62,10 +67,10 @@ new_lidar = data_IO.create_lidar(url_lid)
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
-# print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))      # Test data: expecting 65
-# print(find_volume(new_radar, new_lidar))                          # Test: expecting 14,415.5
+# print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))    # Test data: expecting 65
+# print(find_volume(new_radar, new_lidar))                        # Test: expecting 14,415.5
 mass_above = (find_volume(new_radar, new_lidar))*density
-# print(mass_above)                                                 # Test: expecting 12,973,950
+# print(mass_above)                                               # Test: expecting 12,973,950
 
 
 # CALCULATE TOTAL ICEBERG MASS
@@ -134,6 +139,7 @@ plot2.imshow(new_lidar, cmap="plasma")
 canvas.draw()
 
 tk.mainloop()
+
 
 # SAVE INFORMATION TO A FILE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
