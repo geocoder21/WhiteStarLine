@@ -50,3 +50,5 @@ Documenting code:           https://www.datacamp.com/community/tutorials/documen
 Doctest:                    https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
                             https://www.tutorialspoint.com/testing-in-python-using-doctest-module
                             https://docs.python.org/3/library/doctest.html
+                            
+Licenses:                   https://choosealicense.com/licenses/
