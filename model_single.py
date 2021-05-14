@@ -1,19 +1,24 @@
-"""This model pulls in radar and lidar data from specified locations to
-assess whether there is an iceberg within the specified 300m x 300m area.
-The programme then uses dimensions to calculate total iceberg mass and
+"""
+This model pulls in radar and lidar (Light Detection and Ranging) data from
+given online locations to assess whether there is an iceberg within the
+specified 300m x 300m area.
+
+The programme uses dimensions to calculate total iceberg mass and
 volume and whether it could be pulled by an iceberg-towing tug. This
 information is displayed on a Graphical User Interface (GUI) and saved to a
-text file.  The code is written in Python. The programme can be run with  the
+text file.  
+
+The code is written in Python. The programme can be run with  the
 data provided, but could also be used with alternative input data, output
-filename and towing tolerances"""
+filename and towing tolerances."""
 
 
 # IMPORTS
-import tkinter as tk            # GUI package
-import matplotlib               # plotting package
+import tkinter as tk            # GUI library
+import matplotlib               # plotting library
 import matplotlib.pyplot as plt
-import datetime                 # package for including data and time
-import timeit                   # timing package for testing
+import datetime                 # to include data and time in code
+import timeit                   # timing for testing
 import doctest                  # code testing
 
 import data_IO                  # functions for importing and exporting data
@@ -29,23 +34,34 @@ url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2
 
 
 # FUNCTIONS
+"""
+find_volume finds the total volume of ice within the area by identifying which
+squares contain ice (radar value > 100) and then extracting height data
+from lidar readings for that pixel square.
 
-# find total volume of ice
+10 lidar units per metre, and each square is 1m x 1m, so volume = lidar
+height value /10. Value returned is cumulative volume of ice above water level.
+
+ice_pull identifies whether the iceberg can be pulled by assessing whether 
+total mass exceeeds maximum towable mass (36,000,000kg).
+"""
+
+
 def find_volume(radar, lidar):
+
     # test conditions to check for when loop conditions are and are not met
-    # test if radar value >=100 but lidar value is 0
+    # test if radar value >=100 but lidar value is 0 (NB would indicate
+    # incorrect data)
     """
-    >>> find_volume([[100]],[[100]])
-    10.0
+    >>> find_volume([[100]],[[210]])
+    21.0
+    >>> find_volume([[99]],[[100]])
+    0.0
     >>> find_volume([[0]],[[100]])
     0.0
     >>> find_volume([[150]],[[0]])
     0.0
     """
-   # radar value >=100 is ice
-    # 10 lidar units = 1m
-    # each pixel has area 1x1
-    # so volume  = (lidar value/10) 
     volume = 0
     for y in range(len(radar)):
         for x in range(len(radar[y])):
@@ -54,8 +70,8 @@ def find_volume(radar, lidar):
     return(float(volume))
 
 
-# assess whether the iceberg can be towed
 def ice_pull(mass):
+    # test conditions for >, = and < max mass
     """
     >>> ice_pull(1000)
     True
@@ -68,6 +84,7 @@ def ice_pull(mass):
         return True
     else:
         return False
+
 
 # **************************************************************************************
 # MAIN PROGRAMME
@@ -90,10 +107,15 @@ new_lidar = data_IO.create_lidar(url_lid)
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
-# print(find_volume([[0,100,200,300]], [[0,150,200,300]]))    # Test: expecting 65
-# print(find_volume(new_radar, new_lidar))                    # Test: expecting 14,415.5
+# print(find_volume([[0,100,200,300]], [[0,150,200,300]]))
+# # Test: expecting 65
+
+# print(find_volume(new_radar, new_lidar))
+# # Test: expecting 14,415.5
+
 mass_above = (find_volume(new_radar, new_lidar))*density
-# print(mass_above)                                            # Test: expecting 12,973,950
+# print(mass_above)
+# # Test: expecting 12,973,950
 
 
 # CALCULATE TOTAL ICEBERG MASS
@@ -105,11 +127,11 @@ total_mass = mass_above*10
 
 
 # DEFINE STATEMENTS FOR OUTPUTS
-# defined here as used both in GUI and output file
+# defined here for ease of use in both GUI and output file
 
 mass_statement = "Total iceberg mass = " + str(total_mass) + " kg"
 volume_statement = "Total iceberg volume = " + str(total_mass/density) + " m3"
-if ice_pull(total_mass) == True:
+if ice_pull(total_mass) is True:
     pull_statement = "Iceberg can be towed"
 else:
     pull_statement = "Iceberg is too large to be towed"
@@ -121,7 +143,7 @@ else:
 root = tk.Tk()
 root.wm_title("Iceberg tow model")
 
-# create new figure with subplots
+# create new figure with two subplots
 fig, (plot1, plot2) = plt.subplots(1, 2, figsize=(9, 4))
 # ax = fig.add_axes([0, 0, 1, 1])
 
@@ -141,7 +163,7 @@ text.insert(tk.END, pull_statement)
 
 # add quit button
 button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy',
-fg='white')
+    fg='white')
 button.pack()
 button.place(x=770, y=415)
 
@@ -166,11 +188,12 @@ canvas.draw()
 tk.mainloop()
 
 # SAVE INFORMATION TO A FILE
-# runs once 'quit'button clicked on GUI
+# runs once 'quit' button clicked on GUI
 
 date = str(datetime.datetime.now())
 end_data = [date, mass_statement, volume_statement, pull_statement]
 data_IO.write_out('iceberg_analysis.txt', end_data)
+
 
 
 # TESTING AND TIMING
@@ -179,13 +202,15 @@ data_IO.write_out('iceberg_analysis.txt', end_data)
 if __name__ == "__main__":
     print("Timing for find_volume:")
     x = timeit.timeit("find_volume(new_radar, new_lidar)",
-    setup="from __main__ import find_volume,""new_radar, new_lidar", number=1)
+        setup="from __main__ import find_volume,""new_radar, new_lidar",
+        number=1)
     print("{:15.15f}".format(x))                # Test: approx 0.013-0.015 secs
+                                                # slower when doctest runs
 
 # 2. test timing for ice_pull function
     print("Timing for ice_pull:")
     y = timeit.timeit("ice_pull(total_mass)", 
-    setup="from __main__ import ice_pull,""total_mass", number=1)
+        setup="from __main__ import ice_pull,""total_mass", number=1)
     print("{:15.15f}".format(y))                # Test: approx 0.000003 secs
 
 # 3. doctest for functions (above)
