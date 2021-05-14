@@ -1,27 +1,30 @@
-"""This model pulls in radar and lidar data from specified locations to assess whether there is an iceberg 
-within the specified 300m x 300m area.  The programme then uses dimensions to calculate total iceberg mass 
-and volume and whether it could be pulled by an iceberg-towing tug.  The code is written in Python."""
+"""This model pulls in radar and lidar data from specified locations to
+assess whether there is an iceberg within the specified 300m x 300m area.
+The programme then uses dimensions to calculate total iceberg mass and
+volume and whether it could be pulled by an iceberg-towing tug. This
+information is displayed on a Graphical User Interface (GUI) and saved to a
+text file.  The code is written in Python. The programme can be run with  the
+data provided, but could also be used with alternative input data, output
+filename and towing tolerances"""
+
 
 # IMPORTS
-import tkinter as tk
-import numpy as np
-import matplotlib 
+import tkinter as tk            # GUI package
+import matplotlib               # plotting package
 import matplotlib.pyplot as plt
-import timeit
-import datetime
+import datetime                 # package for including data and time
+import timeit                   # timing package for testing
 
-import data_IO
-# import icebergclass
+import data_IO                  # functions for importing and exporting data
 
 
 # MODEL PARAMETERS
-
 density = 900           # density of ice in kg/m3
 lidperm = 10            # lidar units per metre
 max_tow = 36000000      # maximum towable mass in kg
 url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.radar'
 url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
-
+# addresses can be updated to pull in alternative data
 
 # FUNCTIONS
 
@@ -46,9 +49,9 @@ def ice_pull(mass):
     else:
         False
 
-# ******************************************************************************************************************************
+# **************************************************************************************
 # MAIN PROGRAMME
-# ******************************************************************************************************************************
+# **************************************************************************************
 
 # set up backend correctly before fig is created
 matplotlib.use('TkAgg')
@@ -67,10 +70,10 @@ new_lidar = data_IO.create_lidar(url_lid)
 
 # ASSESS WHICH AREAS ARE ICE AND CALCULATE MASS ABOVE SEA LEVEL
 
-# print(find_volume([[0,100,200,300,0]], [[0,150,200,300,0]]))    # Test data: expecting 65
-# print(find_volume(new_radar, new_lidar))                        # Test: expecting 14,415.5
+# print(find_volume([[0,100,200,300]], [[0,150,200,300]]))    # Test: expecting 65
+# print(find_volume(new_radar, new_lidar))                    # Test: expecting 14,415.5
 mass_above = (find_volume(new_radar, new_lidar))*density
-# print(mass_above)                                               # Test: expecting 12,973,950
+# print(mass_above)                                            # Test: expecting 12,973,950
 
 
 # CALCULATE TOTAL ICEBERG MASS
@@ -78,7 +81,8 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 # 10% of mass is above water, 90% below
 # so total iceberg mass = mass above sea * 10
 total_mass = mass_above*10
-# print(total_mass)                                     # Test: expecting 129,739,500 and match with GUI
+# print(total_mass)            # Test: expecting 129,739,500 and match with GUI
+
 
 # DEFINE STATEMENTS FOR OUTPUTS
 # defined here as used both in GUI and output file
@@ -89,6 +93,7 @@ if ice_pull(total_mass) == True:
     pull_statement = "Iceberg can be towed"
 else:
     pull_statement = "Iceberg is too large to be towed"
+
 
 # DISPLAY 
 
@@ -113,7 +118,6 @@ text.insert(tk.END, volume_statement)
 text.insert(tk.END, '\n')
 text.insert(tk.END, '\n')
 text.insert(tk.END, pull_statement)
-
 
 # add quit button
 button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy', fg='white')
@@ -140,14 +144,15 @@ canvas.draw()
 
 tk.mainloop()
 
+# SAVE INFORMATION TO A FILE
+# runs once 'quit'button clicked on GUI
 
-# SAVE INFORMATION TO A FILE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-date=str(datetime.datetime.now())
+date = str(datetime.datetime.now())
 end_data = [date, mass_statement, volume_statement, pull_statement]
 data_IO.write_out('iceberg_analysis.txt', end_data)
 
-# TESTING AND TIMING 
+
+# TESTING AND TIMING
 
 if __name__ == "__main__":
     print("Timing for find_volume:")
@@ -155,11 +160,11 @@ if __name__ == "__main__":
                     setup="from __main__ import find_volume,"
                     "new_radar, new_lidar",
                     number=1)
-    print("{:15.15f}".format(x))                # Test: approx 0.013 to 0.015 seconds
+    print("{:15.15f}".format(x))                # Test: approx 0.013-0.015 secs
 
     print("Timing for ice_pull:")
     y = timeit.timeit("ice_pull(total_mass)",
                     setup="from __main__ import ice_pull,"
                     "total_mass",
                     number=1)
-    print("{:15.15f}".format(y))                # Test: approx 0.000003 seconds
+    print("{:15.15f}".format(y))                # Test: approx 0.000003 secs
