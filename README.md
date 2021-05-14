@@ -16,7 +16,7 @@ The programme requires radar and lidar (Light Detection and Ranging) data for a 
 - Lidar values represent height of ice, with 10 units per metre
 
 ## Development and testing
-Further details of development processes and testing are given within the developmeny.md file within this project.
+Further details of development processes and testing are given within this project.
 ```
 development.md
 ```
