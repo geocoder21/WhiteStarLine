@@ -227,6 +227,6 @@ if __name__ == "__main__":
 
     # 3. doctest for functions (above)
 
-    # test by typing 'python model_single.py -v' in command prompt
+    # test by typing 'python towing_model.py -v' in command prompt
     # should run 7 tests correctly, as set under functions
     doctest.testmod()
