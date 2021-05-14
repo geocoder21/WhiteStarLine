@@ -8,7 +8,10 @@ volume and whether it could be pulled by an iceberg-towing tug. This
 information is displayed on a Graphical User Interface (GUI) and saved to a
 text file.
 
-The code is written in Python. The programme can be run with the data provided,
+The code is written in Python. It can be run through an operating system
+command-line, an IDE, or a system file manager.
+
+The programme can be run with the data provided,
 but could also be used with alternative input data, output
 filename and towing tolerances."""
 
@@ -22,7 +25,7 @@ import datetime                 # to include data and time in code
 import timeit                   # timing for testing
 import doctest                  # code testing
 
-import data_io                  # functions for importing and exporting data
+import data_io                  # functions for importing and writing out data
 
 
 # MODEL PARAMETERS
