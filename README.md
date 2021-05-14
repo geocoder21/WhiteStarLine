@@ -33,7 +33,7 @@ $ python towing_model.py
 Alternatively it can be run through the Integrated Development Environment (IDE) of your choice, or the system file manager.
 
 ## Development and testing
-The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html) Full details of development processes and testing are given elsewhere within this project.
+The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html). Full details of development processes and testing are given elsewhere within this project.
 ```
 development.md
 ```
