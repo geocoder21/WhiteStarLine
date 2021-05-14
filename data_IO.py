@@ -45,6 +45,4 @@ def write_out(filename, end_data):
         data_out.write(end_data[i])
         data_out.write("\n")
     data_out.close()
-#     # data_out=pandas.DataFrame(end_data)
-#     # data_out.to_csv('Data_out.csv', sep=",")            # TO BE DONE
-#     # return(data_out)
+# writes data out

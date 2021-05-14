@@ -14,6 +14,7 @@ import matplotlib               # plotting package
 import matplotlib.pyplot as plt
 import datetime                 # package for including data and time
 import timeit                   # timing package for testing
+import doctest                  # code testing
 
 import data_IO                  # functions for importing and exporting data
 
@@ -26,28 +27,47 @@ url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2
 url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
 # addresses can be updated to pull in alternative data
 
+
 # FUNCTIONS
 
 # find total volume of ice
 def find_volume(radar, lidar):
-    # radar value >=100 is ice
+    # test conditions to check for when loop conditions are and are not met
+    # test if radar value >=100 but lidar value is 0
+    """
+    >>> find_volume([[100]],[[100]])
+    10.0
+    >>> find_volume([[0]],[[100]])
+    0.0
+    >>> find_volume([[150]],[[0]])
+    0.0
+    """
+   # radar value >=100 is ice
     # 10 lidar units = 1m
     # each pixel has area 1x1
-    # so volume  = (lidar value/10)
+    # so volume  = (lidar value/10) 
     volume = 0
     for y in range(len(radar)):
         for x in range(len(radar[y])):
             if radar[y][x] >= 100:
-                volume += (lidar[y][x]/lidperm) 
-    return(volume)
+                volume += (lidar[y][x]/lidperm)
+    return(float(volume))
 
 
 # assess whether the iceberg can be towed
 def ice_pull(mass):
+    """
+    >>> ice_pull(1000)
+    True
+    >>> ice_pull(36000000)
+    False
+    >>> ice_pull(36000001)
+    False
+    """
     if mass < max_tow:
-        True
+        return True
     else:
-        False
+        return False
 
 # **************************************************************************************
 # MAIN PROGRAMME
@@ -95,14 +115,14 @@ else:
     pull_statement = "Iceberg is too large to be towed"
 
 
-# DISPLAY 
+# DISPLAY
 
 # set up GUI with root and title
 root = tk.Tk()
 root.wm_title("Iceberg tow model")
 
 # create new figure with subplots
-fig, (plot1, plot2) = plt.subplots(1,2,figsize=(9, 4))
+fig, (plot1, plot2) = plt.subplots(1, 2, figsize=(9, 4))
 # ax = fig.add_axes([0, 0, 1, 1])
 
 # make a canvas
@@ -120,7 +140,8 @@ text.insert(tk.END, '\n')
 text.insert(tk.END, pull_statement)
 
 # add quit button
-button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy', fg='white')
+button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy',
+fg='white')
 button.pack()
 button.place(x=770, y=415)
 
@@ -154,17 +175,20 @@ data_IO.write_out('iceberg_analysis.txt', end_data)
 
 # TESTING AND TIMING
 
+# 1. test timing for find_volume function
 if __name__ == "__main__":
     print("Timing for find_volume:")
     x = timeit.timeit("find_volume(new_radar, new_lidar)",
-                    setup="from __main__ import find_volume,"
-                    "new_radar, new_lidar",
-                    number=1)
+    setup="from __main__ import find_volume,""new_radar, new_lidar", number=1)
     print("{:15.15f}".format(x))                # Test: approx 0.013-0.015 secs
 
+# 2. test timing for ice_pull function
     print("Timing for ice_pull:")
-    y = timeit.timeit("ice_pull(total_mass)",
-                    setup="from __main__ import ice_pull,"
-                    "total_mass",
-                    number=1)
+    y = timeit.timeit("ice_pull(total_mass)", 
+    setup="from __main__ import ice_pull,""total_mass", number=1)
     print("{:15.15f}".format(y))                # Test: approx 0.000003 secs
+
+# 3. doctest for functions (above)
+# test by typing 'python model_single.py -v' in command prompt
+if __name__ == "__main__":
+    doctest.testmod()
