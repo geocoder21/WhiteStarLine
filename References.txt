@@ -43,8 +43,10 @@ Zombies and Cats:           http://inventwithpython.com/blog/2011/08/11/recursio
 MISC
 
 Date and time:              https://www.w3schools.com/python/python_datetime.asp
+
 Documenting code:           https://www.datacamp.com/community/tutorials/documenting-python-code
+                            https://www.python.org/dev/peps/pep-0257/ 
+
 Doctest:                    https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
                             https://www.tutorialspoint.com/testing-in-python-using-doctest-module
                             https://docs.python.org/3/library/doctest.html
-                            

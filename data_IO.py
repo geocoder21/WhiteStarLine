@@ -1,46 +1,38 @@
- # IMPORTS
+# IMPORTS
 
 import pandas
 
 # *********************************************************************************************************************************************
 # FUNCTIONS
 
+"""
+    read_data
+    Pulls in csv data from url using pandas library.  Reads into a DataFrame
+    and then converts to a 2D list.  Returns data as a list of lists with
+    integer values.
 
-# Read in radar data (single iceberg)
-
-def create_radar(url_name):
-    # Initiate variable
-    radar_lst = []
-
-    # Get data using pandas library
-    # used instead of requests module + csv reader as more efficient code
-
-    # Get data via URL request into a pandas DataFrame
-    radar_data=pandas.read_csv(url_name)
-    # Extract data from DataFrame and convert to 2D list
-    radar_lst=radar_data.values.tolist()
-        # return radar data as a list of lists with integer values
-    return(radar_lst)
+    write_data
+    Writes out specified end data to a new file.  Data strings are
+    separated by line breaks.
+    """
+# used instead of requests module + csv reader as more efficient code
 
 
-# Read in lidar data (single iceberg)
+# Read in csv data
 
-def create_lidar(url_name):
-    # initiate variable
-    lidar_lst = []
+def read_data(url_name):
 
-    # Get data via URL request into a pandas DataFrame
-    lidar_data=pandas.read_csv(url_name)
-        # Extract data from DataFrame and convert to 2D list
-    lidar_lst=lidar_data.values.tolist()
-    # return lidar data as a list of lists with integer values
-    return(lidar_lst)
+    lst = []  # initiate variable
+
+    data = pandas.read_csv(url_name)    # get data
+    lst = data.values.tolist()          # covert to 2D list
+    return(lst)
 
 
-# Read out data to a file
+# Write out data to a new file
 
-def write_out(filename, end_data):
-    data_out=open(filename, "w")
+def write_data(filename, end_data):
+    data_out = open(filename, "w")
     for i in range(len(end_data)):
         data_out.write(end_data[i])
         data_out.write("\n")
