@@ -1,9 +1,6 @@
 # Programme Development
  
 
-## Contents (latest versions)
-
-
 ## Project Description
 
 ### Task and context
