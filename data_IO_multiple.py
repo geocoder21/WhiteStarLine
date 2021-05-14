@@ -1,7 +1,6 @@
  # IMPORTS
 
 import pandas
-# import datetime
 
 # *********************************************************************************************************************************************
 # FUNCTIONS
@@ -39,14 +38,5 @@ def create_lidar(url_name):
 
 
 # Read out data to a file
-
-def write_out(filename, end_data): 
-    data_out=open(filename, "w")
-    for i in range(len(end_data)):        
-        data_out.write(end_data[i])
-        data_out.write("\n")
-    data_out.close()
-#     # data_out=pandas.DataFrame(end_data)
-#     # data_out.to_csv('Data_out.csv', sep=",")            # TO BE DONE
-#     # return(data_out)
-
+# def write_out():           
+# end_data=pandas.to_csv('Data_out.csv', newline=' ')            # TO BE DONE

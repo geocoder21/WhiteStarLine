@@ -4,12 +4,14 @@ import numpy as np
 import matplotlib 
 import matplotlib.pyplot as plt
 import timeit
+import datetime
 
 import data_IO
 # import icebergclass
 
 
 # MODEL PARAMETERS
+
 density = 900           # density of ice in kg/m3
 lidperm = 10            # lidar units per metre
 max_tow = 36000000      # maximum towable mass in kg
@@ -48,6 +50,7 @@ matplotlib.use('TkAgg')
 
 
 # IMPORT RADAR AND LIDAR DATA
+# can be updated to different web sources by updating addresses in parameters
 
 new_radar = data_IO.create_radar(url_rad)
 # print(new_radar)                          # Test
@@ -72,6 +75,15 @@ mass_above = (find_volume(new_radar, new_lidar))*density
 total_mass = mass_above*10
 # print(total_mass)                                     # Test: expecting 129,739,500 and match with GUI
 
+# DEFINE STATEMENTS FOR OUTPUTS
+# defined here as used both in GUI and output file
+
+mass_statement = "Total iceberg mass = " + str(total_mass) + " kg"
+volume_statement = "Total iceberg volume = " + str(total_mass/density) + " m3"
+if ice_pull(total_mass) == True:
+    pull_statement = "Iceberg can be towed"
+else:
+    pull_statement = "Iceberg is too large to be towed"
 
 # DISPLAY 
 
@@ -90,15 +102,13 @@ canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 # add text widget to display data
 text = tk.Text(root, height=4, width=45, fg='navy')
 text.pack()
-text.insert(tk.END, "Total iceberg mass = " + str(total_mass) + " kg")
+text.insert(tk.END, mass_statement)
 text.insert(tk.END, '\n')
-text.insert(tk.END, "Total iceberg volume = " + str(total_mass/density) + " m3")
+text.insert(tk.END, volume_statement)
 text.insert(tk.END, '\n')
 text.insert(tk.END, '\n')
-if ice_pull(total_mass) == True:
-    text.insert(tk.END,"Iceberg can be towed")
-else:
-    text.insert(tk.END,"Iceberg is too large to be towed")
+text.insert(tk.END, pull_statement)
+
 
 # add quit button
 button = tk.Button(height=2, text='Quit', command=root.quit, bg='navy', fg='white')
@@ -127,6 +137,9 @@ tk.mainloop()
 
 # SAVE INFORMATION TO A FILE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+date=str(datetime.datetime.now())
+end_data = [date, mass_statement, volume_statement, pull_statement]
+data_IO.write_out('iceberg_analysis.txt', end_data)
 
 # TESTING AND TIMING 
 
