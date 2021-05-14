@@ -22,7 +22,8 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html), to prevent collisions with icebergs for a shipping company. 
 
 #### Other applications
-The program could be used to protect immovable objects at sea (such as wind farms and drilling platforms).  There have also been suggestions that icebergs be towed to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/
+1. The program could be used to protect immovable objects at sea (such as wind farms and drilling platforms).  
+2. There have also been investigations into towing icebergs to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/
 
 ### To run the program:
 The code is written in Python 3. Once downloaded it can be run through an operating system command-line.
