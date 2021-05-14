@@ -19,11 +19,11 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 ## Usage
 
 ### Context
-The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html) to prevent collisions with icebergs for a shipping company. 
+The software was developed to meet [a set of requirements](https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/ice.html) to prevent collisions between ships and icebergs, as outlined above. 
 
 #### Other applications
 1. The program could be used to protect immovable objects at sea (such as wind farms and drilling platforms).  
-2. There have also been investigations into towing icebergs to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/
+2. There have also been investigations into towing icebergs to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/ The program could identify those icebergs small enough to be towed.
 
 ### To run the program:
 The code is written in Python 3. Once downloaded it can be run through an operating system command-line.
@@ -39,14 +39,14 @@ The program requires radar and lidar (Light Detection and Ranging) data for a 30
 - Radar values of 100 or greater indicate ice
 - Lidar values represent height of ice, with 10 units per metre
 
-## Development and testing
+## Roadmap for further development
+1. This program currently assumes that there is only one iceberg within the area.  A future development would be to add an iceberg class and create a list of individual icebergs, identified using a recursive flood and fill algorithm.  This would allow each iceberg's mass, volume and 'towability' to be assessed separately.
+2. To meet any future demand for towing icebergs to cities without drinking water, a minimum viable ice volume could also be incorporated.  Ideally this would include a calculation for loss through melting during the journey.
+
 Full details of development processes and testing are given elsewhere within this project.
 ```
 development.md
 ```
-
-### Roadmap for further development
-This program currently assumes that there is only one iceberg within the area.  A future development would be to add an iceberg class and create a list of individual icebergs, identified using a recursive flood and fill algorithm.  This would allow each iceberg's mass, volume and 'towability' to be assessed separately.
 
 ## License
 This project is available under the Apache 2.0 License.  See the LICENSE for further details.
