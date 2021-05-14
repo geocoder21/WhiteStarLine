@@ -15,7 +15,6 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 - License                   <i> Apache 2.0 license </i>
 </pre>
 
-## Installation
 
 ## Usage
 The project could be used to protect shipping and immovable objects at sea (such as wind farms and drilling platforms).  There have also been suggestions that icebergs be towed to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/
@@ -25,6 +24,9 @@ Example data sources are included within the code.  These could be updated, but 
 The programme requires radar and lidar (Light Detection and Ranging) data for a 300m by 300m raster grid, with data measured for each 1m2 pixel.
 - Radar values of 100 or greater indicate ice
 - Lidar values represent height of ice, with 10 units per metre
+
+### To run the programme:
+The code is written in Python 3. It can be run through an operating system command-line, an IDE, or system file manager.
 
 ## Development and testing
 Further details of development processes and testing are given within this project.
