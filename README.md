@@ -6,6 +6,15 @@ The aim is to identify icebergs that are small enough to be towed using a specia
 
 The information is presented on a Graphical User Interface (GUI) and is also written out to a text file.
 
+## Project Contents
+<pre>
+- README.md                 <i> This document </i>
+- development.md            <i> Project design processes, summary of testing, and ideas for further development</i>
+- towing_model.py           <i> Model </i>
+- data_io.py                <i> Code for reading in and writing out data </i>
+- License                   <i> Apache 2.0 license </i>
+</pre>
+
 ## Installation
 
 ## Usage
