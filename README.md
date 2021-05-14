@@ -9,7 +9,7 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 ## Project Contents
 <pre>
 - README.md                 <i> This document </i>
-- development.md            <i> Project design processes, summary of testing, and ideas for further development</i>
+- development.md            <i> Project design, summary of testing, and ideas for further development</i>
 - towing_model.py           <i> Model </i>
 - data_io.py                <i> Code for reading in and writing out data </i>
 - License                   <i> Apache 2.0 license </i>
