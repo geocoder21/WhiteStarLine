@@ -6,12 +6,12 @@ import pandas
 # FUNCTIONS
 
 """
-    read_data
+read_data
     Pulls in csv data from url using pandas library.  Reads into a DataFrame
     and then converts to a 2D list.  Returns data as a list of lists with
     integer values.
 
-    write_data
+write_data
     Writes out specified end data to a new file.  Data strings are
     separated by line breaks.
     """

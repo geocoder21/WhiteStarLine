@@ -30,8 +30,8 @@ import data_io                  # functions for importing and writing out data
 
 
 # MODEL PARAMETERS
-
 # included here so can be updated if required
+
 max_tow = 36000000      # maximum towable mass in kg
 url_rad = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.radar'
 url_lid = 'https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/assessment2/white1.lidar'
