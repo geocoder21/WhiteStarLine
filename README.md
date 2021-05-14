@@ -2,7 +2,7 @@
  
 ## Description
 This project assesses whether an area of sea contains icebergs.  Where icebergs are found, it calculates volume and mass of ice. 
-The aim is to identify icebergs that are small enough to be towed out of the way of shipping using a specialised iceberg-towing tug vessel.  
+The aim is to identify icebergs that are small enough to be towed using a specialised iceberg-towing tug vessel.  
 
 ## Installation
 
@@ -11,6 +11,8 @@ The programme requires radar and lidar (Light Detection and Ranging) data for a 
 - Radar values of 100 or greater indicate ice
 - Lidar values represent height of ice, with 10 units per metre
 Example data sources are included within the code.  These could be updated, but the programme would require the same parameters within the new data.
+
+The project could be used to protect shipping and immovable objects at sea (such as wind farms and drilling platforms).  There have also been suggestions that icebergs be towed to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/
 
 ## Roadmap
 
