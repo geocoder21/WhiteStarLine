@@ -7,7 +7,7 @@
 
 ## Usage
 
-## Licence
-MIT Licence 
+## Roadmap
 
-## References
+## License
+Apache 2.0 License 
