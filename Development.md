@@ -15,10 +15,6 @@
 
 ### Issues and solutions
 
-# Further development
-
-
-## License
-Apache 2.0 License
+## Further development
 
 ## References
