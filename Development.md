@@ -1,11 +1,5 @@
 # Program Development
  
-
-## Project Description
-
-### Task and context
-
-
 ## Design process
 
 ### Testing 
