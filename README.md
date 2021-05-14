@@ -2,7 +2,9 @@
  
 ## Description
 This project assesses whether an area of sea contains icebergs.  Where icebergs are found, it calculates volume and mass of ice. 
-The aim is to identify icebergs that are small enough to be towed using a specialised iceberg-towing tug vessel.  
+The aim is to identify icebergs that are small enough to be towed using a specialised iceberg-towing tug vessel.
+
+The information is presented on a Graphical User Interface (GUI) and is also written out to a text file.
 
 ## Installation
 
