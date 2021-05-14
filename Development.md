@@ -1,4 +1,4 @@
-# WhiteStarLine
+# Programme Development
  
 
 ## Contents (latest versions)
@@ -6,16 +6,19 @@
 
 ## Project Description
 
-# Task and context
+### Task and context
 
-# Design process
 
-# Issues and solutions
+## Design process
+
+### Testing 
+
+### Issues and solutions
 
 # Further development
 
 
-## Licence
-MIT Licence 
+## License
+Apache 2.0 License
 
 ## References
