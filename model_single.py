@@ -13,7 +13,8 @@ command-line, an IDE, or a system file manager.
 
 The programme can be run with the data provided,
 but could also be used with alternative input data, output
-filename and towing tolerances."""
+filename and towing tolerances.
+"""
 
 
 # IMPORTS
