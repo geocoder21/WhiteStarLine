@@ -26,7 +26,10 @@ The programme requires radar and lidar (Light Detection and Ranging) data for a 
 - Lidar values represent height of ice, with 10 units per metre
 
 ### To run the programme:
-The code is written in Python 3. It can be run through an operating system command-line, an IDE, or system file manager.
+The code is written in Python 3. Once downloaded it can be run through an operating system command-line, an IDE, or system file manager.
+```
+$ python towing_model.py
+```
 
 ## Development and testing
 Further details of development processes and testing are given within this project.
