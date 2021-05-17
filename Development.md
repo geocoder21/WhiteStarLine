@@ -49,17 +49,15 @@ The task required display of both radar and lidar data, along with total mass an
 
 Reference was made to the course notes to set up a GUI and creating a canvas (Evans, 2021).  Further reading then allowed additional elements to be added, namely;
 
-1.  **Two subplots**
-    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021)
+1.  **Two subplots with axis labels**
+    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021a).
 
-2.  **Axis labels**
-
-3.  **A text widget** to display mass, volume and whether the iceberg could be pulled
+2.  **A text widget** to display mass, volume and whether the iceberg could be pulled.  This was developed with reference to the https://www.geeksforgeeks.org/ website.
 
 
-4.  **A 'quit' button** to allow the user to exit the GUI and the program to complete
+3.  **A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed.  A quit button allows the user to close the GUI and for the program to complete correctly.  This was developed with reference to https://www.delftstack.com/, using root.quit.
 
-
+Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved using the matplotlib 'List of named colours'(Hunter et al, 2021b).
 
 #### 6. Write information out to a file
 - 'naive' date included
@@ -88,9 +86,18 @@ Reference was made to the course notes to set up a GUI and creating a canvas (Ev
 
 ## References
 
-Evans, A., 2021. Graphical User Interfaces (GUIS), University of Leeds https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
+DelftStack, Dec 2020, Close a TkinterWindow With a Button. [Online]. [Accessed 17 May 2020]. Availabel from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
+
+Evans, A., 2021. Graphical User Interfaces (GUIS), University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
+
 The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
+
+Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021a. matplotlib.axes. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
+
+Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021b. List of named colors. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes  https://matplotlib.org/stable/gallery/color/named_colors.html 
+
+Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.v
+
 * pandas https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 * datatofish https://datatofish.com/convert-pandas-dataframe-to-list/
-Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021. The Axes class, https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
-Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.
+* https://www.geeksforgeeks.org/python-tkinter-text-widget/
