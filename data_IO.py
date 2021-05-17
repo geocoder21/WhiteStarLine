@@ -1,8 +1,8 @@
 # IMPORTS
 
-import pandas
+import pandas       # data manipulation and analysis library
 
-# *********************************************************************************************************************************************
+
 # FUNCTIONS
 
 """
@@ -15,7 +15,6 @@ write_data
     Writes out specified end data to a new file.  Data strings are
     separated by line breaks.
     """
-# used instead of requests module + csv reader as more efficient code
 
 
 # Read in csv data
@@ -29,12 +28,12 @@ def read_data(url_name):
     return(lst)
 
 
-# Write out data to a new file
+# Write out data to a new file (or overwrite existing)
+# can use mode "a" in place of "w" to append to existing file if required
 
 def write_data(filename, end_data):
-    data_out = open(filename, "w")
+    data_out = open(filename, "w")      # return a file object
     for i in range(len(end_data)):
         data_out.write(end_data[i])
-        data_out.write("\n")
-    data_out.close()
-# writes data out
+        data_out.write("\n")            # write the data
+    data_out.close()                    # close the file

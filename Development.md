@@ -4,7 +4,29 @@ The README in the project file outlines the task, context, and project contents.
 ```
 ## Design process
 
+### Algorithm
+- read in data
+- identify ice from radar data and for cells containing ice, extract lidar height data
+- assess total volume and mass of iceberg
+- display file data and information on a graphical user interface (GUI)
+- write information out to a file
+
+#### Read in
 - data_io separate as can be reused
+- pandas used instead of requests module + csv reader as more efficient code
+
+#### Identify ice and extract lidar height data
+
+#### Assess volume and mass of iceberg
+
+
+#### Display plots and information on a GUI
+
+
+#### Write information out to a file
+- 'naive' date included
+- could also 
+
 
 ### Testing 
 
@@ -22,4 +44,9 @@ The README in the project file outlines the task, context, and project contents.
 
 ## Further development
 
+Tidy code by removing tests where possible
+
 ## References
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
+https://datatofish.com/convert-pandas-dataframe-to-list/
