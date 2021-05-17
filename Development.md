@@ -12,8 +12,12 @@ The README in the project file outlines the task, context, and project contents.
 5. write information out to a file
 
 #### Read in data
+Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.
+
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
-It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.
+
+It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to develop the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/ 
+ 
 
 
 #### Identify ice and extract lidar height data
