@@ -11,8 +11,8 @@ The README in the project file outlines the task, context, and project contents.
 4. display file data and information on a graphical user interface (GUI)
 5. write information out to a file
 
-#### Read in data
-Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.
+#### 1. Read in data
+Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.  The functions were therefore written so that web addresses could be updated in the main program as required.
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
@@ -20,15 +20,15 @@ It was decided to use the pandas data manipulation library to read in this data,
  
 
 
-#### Identify ice and extract lidar height data
+#### 2. Identify ice and extract lidar height data
 
-#### Assess volume and mass of iceberg
-
-
-#### Display plots and information on a GUI
+#### 3. Assess volume and mass of iceberg
 
 
-#### Write information out to a file
+#### 4. Display plots and information on a GUI
+
+
+#### 5. Write information out to a file
 - 'naive' date included
 - could also 
 
