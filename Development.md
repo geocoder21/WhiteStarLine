@@ -13,11 +13,11 @@ The README in the project file outlines the task, context, and project contents.
 6. write information out to a file
 
 #### 1. Read in data
-A new Python file, named 'towing_model.py' was created to contain the program. Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', which could then be imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
+A new Python file, named 'towing_model.py' was created to contain the program. Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', to then be imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the pandas data manipulation library to read in this data (The pandas development team, Feb 2020) as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
+It was decided to use the pandas data manipulation library (The pandas development team, Feb 2020) to read in this data as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
 
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
@@ -35,9 +35,7 @@ This function is called within the main program, using the radar and lidar data 
 10% of iceberg mass is above sea level
 ice density = 900kg/m3
 ```
-It was then possible to calculate the volume and mass of the whole iceberg ('total_volume' and 'total_mass' variables within the program).  
-
-Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
+Volume and mass of the whole iceberg could then be caluculated ('total_volume' and 'total_mass' variables within the program).  Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
 
 
 #### 4. Assess whether the iceberg could be pulled
@@ -51,15 +49,15 @@ The task required display of both radar and lidar data, along with total mass an
 
 Reference was made to the course notes to set up a GUI and creating a canvas (Evans, 2021).  Further reading then allowed additional elements to be added, namely;
 
-1.  Two subplots 
+1.  **Two subplots**
     This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021)
 
-2.  Axis labels
+2.  **Axis labels**
 
-3.  A text widget to display mass, volume and whether the iceberg could be pulled
+3.  **A text widget** to display mass, volume and whether the iceberg could be pulled
 
 
-4. a 'quit' button to allow the user to exit the GUI and the program to complete
+4.  **A 'quit' button** to allow the user to exit the GUI and the program to complete
 
 
 
