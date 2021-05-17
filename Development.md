@@ -49,14 +49,13 @@ The task required display of both radar and lidar data, along with total mass an
 
 Reference was made to the course notes to set up a GUI and creating a canvas (Evans, 2021).  Further reading then allowed additional elements to be added, namely;
 
-**a)  Two subplots with axis labels**
-    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021a).
+**a)  Two subplots with axis labels,** allowing radar and lidar data to be displayed side-by-side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021a).
 
 **b)  A text widget** to display mass, volume and whether the iceberg could be pulled.  This was developed with reference to the https://www.geeksforgeeks.org/ website.
 
 **c)  A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed.  A quit button allows the user to close the GUI and for the program to complete correctly.  This was developed with reference to https://www.delftstack.com/, using root.quit.
 
-Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved using the matplotlib 'List of named colours'(Hunter et al, 2021b).
+Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved using the matplotlib 'List of named colours' (Hunter et al, 2021b).
 
 #### 6. Write information out to a file
 - 'naive' date included
