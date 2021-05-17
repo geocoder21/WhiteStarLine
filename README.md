@@ -24,6 +24,7 @@ The software was developed to meet [a set of requirements](https://www.geog.leed
 #### Other applications
 1. The program could be used to protect immovable objects at sea (such as wind farms and drilling platforms).  
 2. There have also been investigations into towing icebergs to areas short of drinking water: https://www.whoi.edu/news-insights/content/can-icebergs-be-towed-to-water-starved-cities/ The program could identify those icebergs small enough to be towed.
+3. This program could also be adapted to assess the mass and volume of any partially submerged object.
 
 ### To run the program:
 The code is written in Python 3. Once downloaded it can be run through an operating system command-line.

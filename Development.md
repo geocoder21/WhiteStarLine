@@ -5,15 +5,16 @@ The README in the project file outlines the task, context, and project contents.
 ## Design process
 
 ### Algorithm
-- read in data
-- identify ice from radar data and for cells containing ice, extract lidar height data
-- assess total volume and mass of iceberg
-- display file data and information on a graphical user interface (GUI)
-- write information out to a file
+1. read in radar and lidar data
+2. identify ice from radar data and for cells containing ice, extract lidar height data
+3. assess total volume and mass of iceberg
+4. display file data and information on a graphical user interface (GUI)
+5. write information out to a file
 
-#### Read in
-- data_io separate as can be reused
-- pandas used instead of requests module + csv reader as more efficient code
+#### Read in data
+The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
+It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.
+
 
 #### Identify ice and extract lidar height data
 
