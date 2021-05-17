@@ -63,7 +63,7 @@ A 'write_data'function was created in the 'data_io.py'file, using the 'open' met
 It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - this could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but this could be renamed for future use.
 
 #### Finalising and documenting code
-Docstrings were included within the code to increase usability for other viewers of the code.  These were written in line with PEP 257 (Goodger, Jun 2001).  A linter was then use in the IDE to ensure that the code was compliant with PEP 8 (Van Rossum et al, Aug 2013)
+Docstrings were included within the code to increase usability for other viewers of the code.  These were written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 (Van Rossum et al, Aug 2013)
 
 ### Testing 
 
