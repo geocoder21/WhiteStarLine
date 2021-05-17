@@ -1,9 +1,12 @@
 REFERENCES AND USEFUL LINKS
 ---------------------------
 
+Citation for documentation:      Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.
+(NB includes standard packages like Tkinter, datetime, timeit & doctest)
+
 DATA I/O
 
-Pandas cheat sheet:         https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf 
+pandas cheat sheet:         https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf 
 
 IO guide:                   https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html
 
@@ -11,10 +14,19 @@ Reading csv into DataFrame: https://pandas.pydata.org/docs/reference/io.html
                             https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv
                             https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 
-Write method:               https://www.w3schools.com/python/ref_file_write.asp
+Converting pandas DataFrame to a list:  https://datatofish.com/convert-pandas-dataframe-to-list/
+
+Write method:               https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+                            https://www.w3schools.com/python/ref_file_write.asp
+
+Citation for pandas software:    The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
+McKinney, W. & others, 2010. Data structures for statistical computing in python. In Proceedings of the 9th Python in Science Conference. pp. 51–56.
+
 
 
 MATPLOTLIB 
+
+Hunter, J.D., 2007. Matplotlib: A 2D graphics environment. Computing in science & engineering, 9(3), pp.90–95.
 
 Colour in matplotlib:       https://matplotlib.org/stable/gallery/color/colormap_reference.html
                             https://matplotlib.org/stable/gallery/color/named_colors.html
@@ -29,6 +41,7 @@ Text widget in tkinter:     https://www.geeksforgeeks.org/python-tkinter-text-wi
 Adding a quit button to tk: https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/
 
 
+
 CELLULAR AUTOMATA
 
 Lecture notes:             https://www.geog.leeds.ac.uk/courses/computing/study/advanced-python/part9/index.html
@@ -40,17 +53,25 @@ RECURSIVE FLOOD FILL ALGORITHM
 Zombies and Cats:           http://inventwithpython.com/blog/2011/08/11/recursion-explained-with-the-flood-fill-algorithm-and-zombies-and-cats/
 
 
+TESTING
+
+Doctest:                    https://docs.python.org/3/library/doctest.html
+                            https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
+                            https://www.tutorialspoint.com/testing-in-python-using-doctest-module
+                            
+
+Timeit:                     https://docs.python.org/3/library/timeit.html
+                            https://www.guru99.com/timeit-python-examples.html
+
+
 MISC
 
-Date and time:              https://www.w3schools.com/python/python_datetime.asp
+Date and time:              https://docs.python.org/3/library/datetime.html
+                            https://www.w3schools.com/python/python_datetime.asp
 
-Documenting code:           https://www.datacamp.com/community/tutorials/documenting-python-code
-                            https://www.python.org/dev/peps/pep-0257/ 
-
-Doctest:                    https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
-                            https://www.tutorialspoint.com/testing-in-python-using-doctest-module
-                            https://docs.python.org/3/library/doctest.html
-
+Documenting code:           https://www.python.org/dev/peps/pep-0257/ 
+                            https://www.datacamp.com/community/tutorials/documenting-python-code
+                            
 Licenses:                   https://choosealicense.com/licenses/
 
 How to write a Readme:      https://dbader.org/blog/write-a-great-readme-for-your-github-project

@@ -5,7 +5,7 @@ specified 300m x 300m area.
 
 The programme uses dimensions to calculate total iceberg mass and
 volume and whether it could be pulled by an iceberg-towing tug. This
-information is displayed on a Graphical User Interface (GUI) and saved to a
+information is displayed on a graphical user interface (GUI) and saved to a
 text file.
 
 The code is written in Python. It can be run through an operating system
@@ -19,12 +19,12 @@ filename and towing tolerances.
 
 # IMPORTS
 
-import tkinter as tk            # GUI library
+import tkinter as tk            # Python standard GUI package
 import matplotlib               # plotting library
 import matplotlib.pyplot as plt
-import datetime                 # to include data and time in code
-import timeit                   # timing for testing
-import doctest                  # code testing
+import datetime                 # module to provide date and time data
+import timeit                   # timing module for testing
+import doctest                  # code testing module
 
 import data_io                  # functions for importing and writing out data
 
@@ -199,7 +199,7 @@ tk.mainloop()
 # SAVE INFORMATION TO A FILE
 # runs once 'quit' button clicked on GUI
 
-date = str(datetime.datetime.now())
+date = str(datetime.datetime.now())         # returns 'naive' time
 end_data = [date, mass_statement, volume_statement, pull_statement]
 data_io.write_data('iceberg_analysis.txt', end_data)
 
