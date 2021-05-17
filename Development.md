@@ -37,14 +37,14 @@ ice density = 900kg/m3
 ```
 It was then possible to calculate the volume and mass of the whole iceberg ('total_volume' and 'total_mass' variables within the program).  
 
-Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements.
+Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
 
 
 #### 4. Assess whether the iceberg could be pulled
 ```
 iceberg mass > 36 million kg cannot be pulled
 ```
-An 'ice_pull' function was developed to return a boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).
+An 'ice_pull' function was developed to return a boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 #### 5. Display plots and information on a GUI
 
