@@ -18,7 +18,7 @@ Since the functions for reading data in and writing out could be reused in a fut
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to assist in development of the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/.
+It was decided to use the pandas data manipulation library to read in this data (The pandas development team, Feb 2020) as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to assist in development of the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/.
 
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
@@ -50,7 +50,17 @@ An 'ice_pull' function was developed to return a Boolean value (True or False), 
 #### 5. Display plots and information on a GUI
 The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using the matplotlib library and tkinter package; these standard Python packages allow data to be plotted and visualised within a GUI (Van Rossum, G., 2020).  
 
-- ref course notes
+Reference was made to the course notes to set up a GUI and creating a canvas (Evans, A., 2021).  Further reading then allowed additional elements to be added, namely;
+
+1. two subplots for radar and lidar data
+
+2. a text widget to display mass, volume and whether the iceberg could be pulled
+
+3. axis labels
+
+4. a 'quit' button to allow the user to exit the GUI and the program to complete
+
+
 
 #### 6. Write information out to a file
 - 'naive' date included
@@ -79,6 +89,8 @@ The task required display of both radar and lidar data, along with total mass an
 
 ## References
 
-https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
-https://datatofish.com/convert-pandas-dataframe-to-list/
+Evans, A., 2021. Graphical User Interfaces (GUIS), University of Leeds https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
+The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
+* pandas https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
+* datatofish https://datatofish.com/convert-pandas-dataframe-to-list/
 Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.
