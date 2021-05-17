@@ -75,7 +75,7 @@ It was decided to include the current date in the file written out; this provide
 - volume function returned int 0 if for loop condition not met.  Again, identified through testing.
 
 ### Finalising and documenting code
-Docstrings were added to the code to increase usability for other viewers of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 (Van Rossum et al, Aug 2013).  Additional in-line comments were included where necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created, to facilitate sharing through GitHub.
+Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.
 
 ### Unresolved issues
 - only works for single iceberg
