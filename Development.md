@@ -87,26 +87,28 @@ Docstrings were added to the code to increase usability for other users of the c
 
 ## References
 
-DelftStack, Dec 2020, *Close a Tkinter Window With a Button*. [Online]. [Accessed 17 May 2020]. Availabel from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
+Data to Fish, July 2020. *How to Convert Pandas DataFrame into a List*. [Online]. [Accessed 17 May 2021]. Available from https://datatofish.com/convert-pandas-dataframe-to-list/
+
+DelftStack, Dec 2020, *Close a Tkinter Window With a Button*. [Online]. [Accessed 17 May 2020]. Available from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
 
 Evans, A. 2021. *Graphical User Interfaces (GUIS)*, University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
 
-Goodger, D. Jun 2001. *PEP 257 -- Docstring Conventions*, Python Software Foundation. [Online]. [Accessed 17 May 2021]. https://www.python.org/dev/peps/pep-0257/
+GeeksforGeeks, Mar 2020. *Python Tkinter - Text Widget*. [Online]. [Accessed 17 May 2021]. Available from https://www.geeksforgeeks.org/python-tkinter-text-widget/
+
+Goodger, D. Jun 2001. *PEP 257 -- Docstring Conventions*, Python Software Foundation. [Online]. [Accessed 17 May 2021]. Available from https://www.python.org/dev/peps/pep-0257/
 
 Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team. May 2021a. *matplotlib.axes*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
 
 Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team. May 2021b. *List of named colors*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes  https://matplotlib.org/stable/gallery/color/named_colors.html 
 
-The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
+The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, Available from https://doi.org/10.5281/zenodo.3509134
 
-Python Software Foundation, May 2021a. *Input and Output* [Online]. [Accessed 17 May 2021]. https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files 
+The pandas development team, *IO tools* [Online]. [Accessed 17 May 2021]. Available from https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 
-Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. https://www.python.org/dev/peps/pep-0008/
+Python Software Foundation, May 2021a. *Input and Output* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files 
+
+Python Software Foundation, May 2021b. *Reading and Writing Files* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+
+Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. Available fromhttps://www.python.org/dev/peps/pep-0008/
 
 Van Rossum, G., 2020. *The Python Library Reference*, release 3.8.2, Python Software Foundation.v
-
-* pandas https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
-* datatofish https://datatofish.com/convert-pandas-dataframe-to-list/
-* https://www.geeksforgeeks.org/python-tkinter-text-widget/
-* https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-
