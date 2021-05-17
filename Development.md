@@ -17,7 +17,9 @@ Since the functions for reading data in and writing out could be reused in a fut
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to develop the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/ Once read in the data was displayed on a test plot, using matplotlib; once checked the plot code was removed.
+It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to develop the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/ 
+
+The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar daa.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
 #### 2. Identify ice and extract lidar height data
 ```
@@ -26,9 +28,11 @@ Radar value >= 100 is ice
 ```
 Given the parameters provided within task guidance (above) it was possible to identify raster pixels that contained ice and then extract the lidar value. It was decided to include both elements within a single function in order to increase efficiency, so the 'find_volume' function first identifies pixels containing ice, and then adds the lidar value in metres for that pixel to a 'volume' variable.  Since each pixel has an area of 1m by 1m, this returns a cumulative volume value for the ice above the water.
 
+This function is called within the main program, using the radar and lidar data read in during the previous step.
+
 #### 3. Assess volume and mass of iceberg
 ```
-10% of an iceberg is above sea level
+10% of iceberg mass is above sea level
 ice density = 900kg/m3
 ```
 It was then possible to calculate the volume and mass of the whole iceberg ('total_volume' and 'total_mass' variables within the program).  
@@ -40,6 +44,7 @@ Since this information would be required to be displayed on a GUI and written ou
 ```
 iceberg mass > 36 million kg cannot be pulled
 ```
+An 'ice_pull' function was developed to return a boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).
 
 #### 5. Display plots and information on a GUI
 
