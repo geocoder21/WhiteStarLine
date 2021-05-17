@@ -58,12 +58,12 @@ A basic canvas was created with reference to the course notes (Evans, 2021).  Fu
 Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved using the matplotlib 'List of named colours' (Hunter et al, 2021b).
 
 #### 6. Write information out to a file
-A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, using mode 'w'to write or overwrite to that location.  
+A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, using mode 'w'to write or overwrite to that location (Python Foundation, May 2021a).  
 
 It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - this could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but this could be renamed for future use.
 
-### Finalising and documenting code
-
+#### Finalising and documenting code
+Docstrings were included within the code to increase usability for other viewers of the code.  These were written in line with PEP 257 (Goodger, Jun 2001).  A linter was then use in the IDE to ensure that the code was compliant with PEP 8 (Van Rossum et al, Aug 2013)
 
 ### Testing 
 
@@ -89,13 +89,17 @@ DelftStack, Dec 2020, *Close a TkinterWindow With a Button*. [Online]. [Accessed
 
 Evans, A., 2021. *Graphical User Interfaces (GUIS)*, University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
 
+Goodger, D. Jun 2001. *PEP 257 -- Docstring Conventions*, Python Software Foundation. [Online]. [Accessed 17 May 2021]. https://www.python.org/dev/peps/pep-0257/
+
 Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021a. *matplotlib.axes*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
 
 Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021b. *List of named colors*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes  https://matplotlib.org/stable/gallery/color/named_colors.html 
 
 The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
 
-Python Software Foundation, May 2021. *Input and Output* [Online]. [Accessed 17 May 2021]. https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files 
+Python Software Foundation, May 2021a. *Input and Output* [Online]. [Accessed 17 May 2021]. https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files 
+
+Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. https://www.python.org/dev/peps/pep-0008/
 
 Van Rossum, G., 2020. *The Python Library Reference*, release 3.8.2, Python Software Foundation.v
 
