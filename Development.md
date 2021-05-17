@@ -11,10 +11,9 @@ The README in the project file outlines the task, context, and project contents.
 4. assess whether the iceberg could be pulled
 5. display file data and information on a graphical user interface (GUI)
 6. write information out to a file
-7. finalise and document code
 
 #### 1. Read in data
-Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', which was then imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
+A new Python file, named 'towing_model.py' was created to contain the program. Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', which could then be imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
@@ -68,7 +67,7 @@ Reference was made to the course notes to set up a GUI and creating a canvas (Ev
 - 'naive' date included
 - could also 
 
-#### 7. Finalise and document code
+### Finalising and documenting code
 
 
 ### Testing 
