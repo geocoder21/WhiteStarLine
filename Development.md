@@ -18,7 +18,7 @@ Since the functions for reading data in and writing out could be reused in a fut
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the pandas data manipulation library to read in this data (The pandas development team, Feb 2020) as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to assist in development of the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/.
+It was decided to use the pandas data manipulation library to read in this data (The pandas development team, Feb 2020) as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
 
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
@@ -45,15 +45,15 @@ Since this information would be required to be displayed on a GUI and written ou
 ```
 iceberg mass > 36 million kg cannot be pulled
 ```
-An 'ice_pull' function was developed to return a Boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
+An 'ice_pull' function was developed to return a True or False Boolean value, depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 #### 5. Display plots and information on a GUI
-The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using the matplotlib library and tkinter package; these standard Python packages allow data to be plotted and visualised within a GUI (Van Rossum, G., 2020).  
+The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using the matplotlib library and tkinter package; these standard Python packages allow data to be plotted and visualised within a GUI (Van Rossum, 2020).  
 
-Reference was made to the course notes to set up a GUI and creating a canvas (Evans, A., 2021).  Further reading then allowed additional elements to be added, namely;
+Reference was made to the course notes to set up a GUI and creating a canvas (Evans, 2021).  Further reading then allowed additional elements to be added, namely;
 
 1.  Two subplots 
-    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes)
+    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021)
 
 2.  Axis labels
 
@@ -95,4 +95,5 @@ Evans, A., 2021. Graphical User Interfaces (GUIS), University of Leeds https://w
 The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
 * pandas https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 * datatofish https://datatofish.com/convert-pandas-dataframe-to-list/
+Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021. The Axes class, https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
 Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.
