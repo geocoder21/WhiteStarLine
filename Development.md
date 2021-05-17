@@ -52,11 +52,13 @@ The task required display of both radar and lidar data, along with total mass an
 
 Reference was made to the course notes to set up a GUI and creating a canvas (Evans, A., 2021).  Further reading then allowed additional elements to be added, namely;
 
-1. two subplots for radar and lidar data
+1.  Two subplots 
+    This allows radar and lidar data to be displayed side by side. The code was developed with reference to matplotlib documentation (https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes)
 
-2. a text widget to display mass, volume and whether the iceberg could be pulled
+2.  Axis labels
 
-3. axis labels
+3.  A text widget to display mass, volume and whether the iceberg could be pulled
+
 
 4. a 'quit' button to allow the user to exit the GUI and the program to complete
 
