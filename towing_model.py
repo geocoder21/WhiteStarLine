@@ -211,19 +211,20 @@ data_io.write_data('iceberg_analysis.txt', end_data)
 if __name__ == "__main__":
 
     # 1. test timing for find_volume function
+    # returns time in seconds and milliseconds, to 10 decimal places
 
     print("Timing for find_volume:")
     x = timeit.timeit("find_volume(new_radar, new_lidar)",
         setup="from __main__ import find_volume,""new_radar, new_lidar",
         number=1)
-    print("{:15.15f}".format(x))     # approx 0.013-0.015 secs
+    print("{:15.10f}".format(x))     # approx 0.013-0.015 secs
 
     # 2. test timing for ice_pull function
 
     print("Timing for ice_pull:")
     y = timeit.timeit("ice_pull(total_mass)",
         setup="from __main__ import ice_pull,""total_mass", number=1)
-    print("{:15.15f}".format(y))                # approx 0.000003 secs
+    print("{:15.10f}".format(y))                # approx 0.000003 secs
 
     # 3. doctest for functions (above)
 

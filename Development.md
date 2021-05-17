@@ -65,10 +65,13 @@ It was decided to include the current date in the file written out; this provide
 
 
 ### Testing 
+Three principle types of testing were employed in development of the program: 
 
-- within source code
-- doctest tests
-- timing tests
+1. Firstly, tests were written within source code and performed as each section of the program was developed.  These either tested the program data or dummy data sets to check whether the code produced expected results.  The majority of these tests were then commented out so as to be available for future amendments. 
+
+2. Timing tests were included for the find_volume and ice_pull functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. 
+
+3. Finally, the *doctest* module was imported and tests built into the functions in the main program.  This allowed for testing of a range of conditions.
 
 ### Issues and solutions
 - ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
@@ -108,6 +111,8 @@ The pandas development team, *IO tools* [Online]. [Accessed 17 May 2021]. Availa
 Python Software Foundation, May 2021a. *Input and Output* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files 
 
 Python Software Foundation, May 2021b. *Reading and Writing Files* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+
+Python Software Foundation, May 2021c. *timeit - Measure execution timeof small code snippets.* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/library/timeit.html
 
 Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. Available fromhttps://www.python.org/dev/peps/pep-0008/
 
