@@ -11,15 +11,16 @@ The README in the project file outlines the task, context, and project contents.
 4. assess whether the iceberg could be pulled
 5. display file data and information on a graphical user interface (GUI)
 6. write information out to a file
+7. finalise and document code
 
 #### 1. Read in data
-Since the functions for reading data in and writing out could be reused in a future program these were written in a separate file from the main code, named 'data_io.py'.  The functions were therefore written so that web addresses could be updated in the main program as required.
+Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', which was then imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to develop the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/ 
+It was decided to use the pandas data manipulation library to read in this data, as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  The two sites used to assist in development of the read_data function were https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table and https://datatofish.com/convert-pandas-dataframe-to-list/.
 
-The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar daa.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
+The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
 #### 2. Identify ice and extract lidar height data
 ```
@@ -44,14 +45,18 @@ Since this information would be required to be displayed on a GUI and written ou
 ```
 iceberg mass > 36 million kg cannot be pulled
 ```
-An 'ice_pull' function was developed to return a boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
+An 'ice_pull' function was developed to return a Boolean value (True or False), depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 #### 5. Display plots and information on a GUI
+The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using the matplotlib library and tkinter package; these standard Python packages allow data to be plotted and visualised within a GUI (Van Rossum, G., 2020).  
 
+- ref course notes
 
 #### 6. Write information out to a file
 - 'naive' date included
 - could also 
+
+#### 7. Finalise and document code
 
 
 ### Testing 
@@ -70,9 +75,10 @@ An 'ice_pull' function was developed to return a boolean value (True or False), 
 
 ## Further development
 
-Tidy code by removing tests where possible
+- Tidy code by removing tests where possible
 
 ## References
 
 https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-read-csv-table
 https://datatofish.com/convert-pandas-dataframe-to-list/
+Van Rossum, G., 2020. The Python Library Reference, release 3.8.2, Python Software Foundation.
