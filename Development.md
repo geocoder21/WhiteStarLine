@@ -69,9 +69,9 @@ Three principle types of testing were employed in development of the program:
 
 1. Firstly, tests were written within source code and performed as each section of the program was developed.  These either tested the program data or dummy data sets to check whether the code produced expected results.  The majority of these tests were then commented out so as to be available for future amendments. 
 
-2. Timing tests were included for the find_volume and ice_pull functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. 
+2. Timing tests were included for the 'find_volume' and 'ice_pull' functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. The code was written with reference to the Python Library (Python Software Foundation, May 2021c) and https://www.guru99.com/.
 
-3. Finally, the *doctest* module was imported and tests built into the functions in the main program.  This allowed for testing of a range of conditions.
+3. Finally, the *doctest* module was imported and tests built into the functions in the main program.  This allowed for testing of a range of conditions. Further information on *doctest* is available through the Python Library (Python Software Foundation, May 2021d), and in addition Tagliaferri (2021) was referenced in order to formulate the tests.
 
 ### Issues and solutions
 - ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
@@ -90,15 +90,17 @@ Docstrings were added to the code to increase usability for other users of the c
 
 ## References
 
-Data to Fish, July 2020. *How to Convert Pandas DataFrame into a List*. [Online]. [Accessed 17 May 2021]. Available from https://datatofish.com/convert-pandas-dataframe-to-list/
+Data to Fish website, July 2020. *How to Convert Pandas DataFrame into a List*. [Online]. [Accessed 17 May 2021]. Available from https://datatofish.com/convert-pandas-dataframe-to-list/
 
 DelftStack, Dec 2020, *Close a Tkinter Window With a Button*. [Online]. [Accessed 17 May 2020]. Available from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
 
 Evans, A. 2021. *Graphical User Interfaces (GUIS)*, University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
 
-GeeksforGeeks, Mar 2020. *Python Tkinter - Text Widget*. [Online]. [Accessed 17 May 2021]. Available from https://www.geeksforgeeks.org/python-tkinter-text-widget/
+GeeksforGeeks website, Mar 2020. *Python Tkinter - Text Widget*. [Online]. [Accessed 17 May 2021]. Available from https://www.geeksforgeeks.org/python-tkinter-text-widget/
 
 Goodger, D. Jun 2001. *PEP 257 -- Docstring Conventions*, Python Software Foundation. [Online]. [Accessed 17 May 2021]. Available from https://www.python.org/dev/peps/pep-0257/
+
+Guru99 website. *Python Timeit() with examples* [Online]. [Accessed 17 May 2021]. Available from https://www.guru99.com/timeit-python-examples.html
 
 Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team. May 2021a. *matplotlib.axes*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
 
@@ -113,6 +115,10 @@ Python Software Foundation, May 2021a. *Input and Output* [Online]. [Accessed 17
 Python Software Foundation, May 2021b. *Reading and Writing Files* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
 Python Software Foundation, May 2021c. *timeit - Measure execution timeof small code snippets.* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/library/timeit.html
+
+Python Software Foundation, May 2021d. *doctest - Test interactive Python examples.* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/library/timeit.html
+
+Tagliaferri, L. Feb 2021. *How To Write Doctests in Python*. [Accessed 17 May 2021]. Available from https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
 
 Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. Available fromhttps://www.python.org/dev/peps/pep-0008/
 
