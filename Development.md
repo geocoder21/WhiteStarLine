@@ -87,15 +87,15 @@ Docstrings were added to the code to increase usability for other users of the c
 
 ## References
 
-DelftStack, Dec 2020, *Close a TkinterWindow With a Button*. [Online]. [Accessed 17 May 2020]. Availabel from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
+DelftStack, Dec 2020, *Close a Tkinter Window With a Button*. [Online]. [Accessed 17 May 2020]. Availabel from https://www.delftstack.com/howto/python-tkinter/how-to-close-a-tkinter-window-with-a-button/ 
 
-Evans, A., 2021. *Graphical User Interfaces (GUIS)*, University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
+Evans, A. 2021. *Graphical User Interfaces (GUIS)*, University of Leeds [Online]. [Accessed 17 May 2020]. Available from https://www.geog.leeds.ac.uk/courses/computing/study/core-python-odl2/part10/index.html 
 
 Goodger, D. Jun 2001. *PEP 257 -- Docstring Conventions*, Python Software Foundation. [Online]. [Accessed 17 May 2021]. https://www.python.org/dev/peps/pep-0257/
 
-Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021a. *matplotlib.axes*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
+Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team. May 2021a. *matplotlib.axes*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes 
 
-Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team, May 2021b. *List of named colors*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes  https://matplotlib.org/stable/gallery/color/named_colors.html 
+Hunter, J., Dale, D., Firing, E., Droettboom, M. and the Matplotlib development team. May 2021b. *List of named colors*. [Online]. [Accessed 17 May 2020]. Available from https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes  https://matplotlib.org/stable/gallery/color/named_colors.html 
 
 The pandas development team, Feb 2020, 'pandas-dev/pandas: Pandas, Zenodo, https://doi.org/10.5281/zenodo.3509134
 
