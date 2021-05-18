@@ -2,6 +2,7 @@
 
 > The README in the project file outlines the task, context, and project contents.  Please read it first.
 
+
 ## Design process
 
 ### Algorithm
@@ -23,8 +24,8 @@ It was decided to use the *pandas* data manipulation library (the pandas develop
 
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
-#### 2. Identify ice and extract lidar height data
 
+#### 2. Identify ice and extract lidar height data
 > Radar value >= 100 is ice
 >
 > 1 lidar unit = 10cm
@@ -33,8 +34,8 @@ Given the parameters provided within task guidance (above) it was possible to id
 
 This function is called within the main program, using the radar and lidar data read in during the previous step.
 
-#### 3. Assess volume and mass of iceberg
 
+#### 3. Assess volume and mass of iceberg
 > 10% of iceberg mass is above sea level
 >
 > ice density = 900kg/m3
@@ -43,10 +44,10 @@ Volume and mass of the whole iceberg could then be caluculated ('total_volume' a
 
 
 #### 4. Assess whether the iceberg could be pulled
-
 > iceberg mass > 36 million kg cannot be pulled
 
 An 'ice_pull' function was developed to return a True or False Boolean value, dependent on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
+
 
 #### 5. Display plots and information on a GUI
 The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using *matplotlib* external library and *tkinter* standard library; these allow data to be plotted and visualised within a GUI (Van Rossum, 2020).  
@@ -61,11 +62,11 @@ A basic canvas was created with reference to the course notes (Evans, 2021).  Fu
 
 Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved with reference to the *matplotlib* 'List of named colours' (Hunter et al, 2021b).
 
+
 #### 6. Write information out to a file
 A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, and mode 'w'to write or overwrite to that location (Python Foundation, May 2021a).  
 
 It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - however the code could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but again this could be renamed for future use.
-
 
 
 ### Testing 
@@ -81,11 +82,13 @@ Three principle types of testing were employed in development of the program:
 ### Finalising and documenting code
 Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.  The markdown documents were created with reference to Cone's (2021) guide to syntax.
 
+
 ## Issues and solutions
 A number of issues were identified through development and testing of the code.  The most significant of these are outlined below.
 
 ### Resolved issues
-1. **ice_pull function output**: the function was initially written as follows:
+
+1. **ice_pull function output**. the function was initially written as follows:
 ```
 def ice_pull(mass):
     if mass < max_tow:
@@ -95,18 +98,33 @@ def ice_pull(mass):
 ```
 When the program was run the function appeared to be working, as the large iceberg gained a False output.  However, the *bloctest* on this function showed that no value was being returned, so the function defaulted to False.  The function was updated to include `return True` and `return False` and then worked correctly.
 
-2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
+2. **volume function output**. The oringal code for this function was as follows:
+```
+def find_volume(radar, lidar):
+    volume = 0
+    for y in range(len(radar)):
+        for x in range(len(radar[y])):
+            if radar[y][x] >= 100:
+                volume += (lidar[y][x] / 10)    
+    return(volume)
+```
+Again, this appeared to work correctly during debugging, but an issue was highlighted through *doctest*.  It became apparent that if the 'for loop' condition was not met then an integer value of 0 was returned, but if the condition was met then a float was returned.  This was overcome by updating the final line to `return(float(volume))`
+
+3. **program not completing**: 
 
 
 ### Unresolved issues
+
 - only works for single iceberg
 - no error codes, e.g. if radar data >100 but lidar data is missing
+
 
 ## Further development
 
 - Mulitple icebergs
 - Grid mesh display
 - Tidy code by removing tests where possible
+
 
 ## References
 
