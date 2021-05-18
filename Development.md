@@ -117,16 +117,20 @@ Again, this appeared to work correctly during debugging, but an issue was highli
 
 - The program only works for a single iceberg, or to calculate the total mass of ice within a set area - however this would not allow the 'ice_pull' function to work correctly.  Work began on updating the model to work for multiple icebergs but could not be completed within time constraints (see 'Further development' below)
 - During testing it was seen that the program did could not identify incorrect data, e.g. if the radar value for a pixel was greater than 100 but lidar value was 0.  It would be beneficial to build in error checks to overcome this problem.
-- point data lost for radar and lidar when moved from *matplotlib* display to *tkinter*
+- When radar and lidar data was first displayed on *matplotlib* spot values could be obtained by hovering the mouse over an area, however replotting within a *tkinter* GUI removed this functionality. A solution was not found within the required timescale to resolve this.
 
 
 ## Further development
 
-- Mulitple icebergs and colour coding
-- Grid mesh display
+- **Mulitple icebergs and colour coding** An extension task was to get the program to work where multiple icebergs were present within the study area, and colour them red or green on the display, depending on whether or not they could be pulled. As identified above, this could not be completed at this stage.  Initial working on this problem identified that the solution would need an iceberg class to be created, containing attributes such as 
+    - maximum and minimum coordinates (for x and y)
+    - area, mass and volume
+    - whether it could be pulled
+A new 2D list would need to be set up, and icebergs identified as separate entities.  Use of a recursive flood and fill algorithm was investigated for this, but code was not yet forumalted.  Once icebergs were established as individual masses, their individual properties could be assessed through an updated program.  
+- **Grid mesh display**
 - Tidy code by removing tests where possible
-- More interactive GUI
-- Error checks
+- **More interactive GUI**
+- **Error checks**
 
 
 ## References
