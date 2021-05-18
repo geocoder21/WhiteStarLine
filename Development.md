@@ -1,7 +1,7 @@
 # Program Development
-```
-The README in the project file outlines the task, context, and project contents.  Please read it first.
-```
+
+> The README in the project file outlines the task, context, and project contents.  Please read it first.
+
 ## Design process
 
 ### Algorithm
@@ -33,17 +33,17 @@ Given the parameters provided within task guidance (above) it was possible to id
 This function is called within the main program, using the radar and lidar data read in during the previous step.
 
 #### 3. Assess volume and mass of iceberg
-```
-10% of iceberg mass is above sea level
-ice density = 900kg/m3
-```
+
+> 10% of iceberg mass is above sea level
+> ice density = 900kg/m3
+
 Volume and mass of the whole iceberg could then be caluculated ('total_volume' and 'total_mass' variables within the program).  Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
 
 
 #### 4. Assess whether the iceberg could be pulled
-```
-iceberg mass > 36 million kg cannot be pulled
-```
+
+> iceberg mass > 36 million kg cannot be pulled
+
 An 'ice_pull' function was developed to return a True or False Boolean value, dependent on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 #### 5. Display plots and information on a GUI
@@ -85,7 +85,8 @@ A number of issues were identified through development and testing of the code. 
 ### Resolved issues
 1. ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
 2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
-
+```
+```
 
 ### Unresolved issues
 - only works for single iceberg
