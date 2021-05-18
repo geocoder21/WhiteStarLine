@@ -116,7 +116,7 @@ Again, this appeared to work correctly during debugging, but an issue was highli
 ### Unresolved issues
 
 - The program only works for a single iceberg, or to calculate the total mass of ice within a set area - however this would not allow the 'ice_pull' function to work correctly.  Work began on updating the model to work for multiple icebergs but could not be completed within time constraints (see 'Further development' below)
-- no error codes, e.g. if radar data >100 but lidar data is missing
+- During testing it was seen that the program did could not identify incorrect data, e.g. if the radar value for a pixel was greater than 100 but lidar value was 0.  It would be beneficial to build in error checks to overcome this problem.
 - point data lost for radar and lidar when moved from *matplotlib* display to *tkinter*
 
 
@@ -126,6 +126,7 @@ Again, this appeared to work correctly during debugging, but an issue was highli
 - Grid mesh display
 - Tidy code by removing tests where possible
 - More interactive GUI
+- Error checks
 
 
 ## References
