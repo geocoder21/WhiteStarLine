@@ -131,14 +131,17 @@ An extension task was to get the program to work where multiple icebergs were pr
 
 A new 2D list would need to be set up, and icebergs identified as separate entities.  Use of a recursive flood and fill algorithm was investigated for this, but code was not yet forumalted.  Once icebergs were established as individual masses, their individual properties could be assessed through an updated program. 
 
-#### Grid mesh display
+#### 3D plot for lidar display
 
-
+It would be interesting to add a 3D plot for the lidar data, to show contours above sea level.  Some investigation was carried out into this, using the *tkinter* wireframe, however the code was not developed sufficiently to be included.
 
 #### More interactive GUI
 
+It would be useful to have a more interactive GUI, for example adding a slider to alter the maximum mass that could be pulled.
+
 #### Error checks
 
+As identified under 'Unresolved issues' above, the program would benefit from additional code to produce error messages under certain circumstances.  The principle benefit would be to identify an error in the radar and lidar data, especially if sources were to be updated.
 
 ## References
 
