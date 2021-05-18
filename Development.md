@@ -16,13 +16,13 @@ The following algorithm was prepared to meet the task requirements:
 6. write information out to a file
 
 #### 1. Read in data
-A new Python file, named 'towing_model.py' was created to contain the program. Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file, named 'data_io.py', to then be imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
+A new Python file ('towing_model.py') was created. Since the functions for reading data in and writing out could be reused in a future program these were created in a separate file ('data_io.py') to then be imported into the main model.  The functions were therefore written so that web addresses could be updated in the main program as required.
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
 It was decided to use the *pandas* data manipulation library (the pandas development team, Feb 2020) to read in this data as this provided  more efficient code than the alternative combination of Python *requests* and *csv reader* modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
 
-The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
+Web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the, data was printed and displayed on a test plot using *matplotlib*; once checked the plot code was removed.
 
 
 #### 2. Identify ice and extract lidar height data
@@ -30,9 +30,9 @@ The web addresses for the raster data were entered within program parameters and
 >
 > 1 lidar unit = 10cm
 
-Given the parameters provided within task guidance (above) it was possible to identify raster pixels that contained ice and then extract the lidar value. It was decided to include both elements within a single function in order to increase efficiency, so the 'find_volume' function first identifies pixels containing ice, and then adds the lidar value in metres for that pixel to a 'volume' variable.  Since each pixel has an area of 1m by 1m, this returns a cumulative volume value for the ice above the water.
+Given the parameters provided within task guidance (above), the 'find_volume' function was developed to first identify pixels containing ice, and then add the lidar value in metres for that pixel to a 'volume' variable.  Since each pixel has an area of 1m by 1m, this returns a cumulative volume value for the ice above the water.
 
-This function is called within the main program, using the radar and lidar data read in during the previous step.
+This function is called within the main program, using the data read in during the previous step.
 
 
 #### 3. Assess volume and mass of iceberg
@@ -40,39 +40,39 @@ This function is called within the main program, using the radar and lidar data 
 >
 > ice density = 900kg/m3
 
-Volume and mass of the whole iceberg could then be caluculated ('total_volume' and 'total_mass' variables within the program).  Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
+Volume and mass of the whole iceberg could then be caluculated. Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
 
 
 #### 4. Assess whether the iceberg could be pulled
 > iceberg mass > 36 million kg cannot be pulled
 
-An 'ice_pull' function was developed to return a True or False Boolean value, dependent on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
+An 'ice_pull' function was developed to return a Boolean value dependent on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 
 #### 5. Display plots and information on a GUI
-The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using *matplotlib* external library and *tkinter* standard library; these allow data to be plotted and visualised within a GUI (Van Rossum, 2020).  
+The task required display of outputs from steps 3 and 4 above.  The data display was created using *matplotlib* external library and *tkinter* standard library, allowing data to be plotted and visualised within a GUI (Van Rossum, 2020).  
 
-A basic canvas was created with reference to the course notes (Evans, 2021).  Further reading then allowed additional elements to be added, namely;
+A basic canvas was created with reference to the course notes (Evans, 2021).  Further research then allowed additional elements to be added, namely;
 
 **-  Two subplots with axis labels,** allowing radar and lidar data to be displayed side-by-side. The code was developed with reference to matplotlib documentation (Hunter et al, 2021a).
 
-**-  A text widget** to display mass, volume and whether the iceberg could be pulled.  This was developed with reference to the https://www.geeksforgeeks.org/ website.
+**-  A text widget** to display the text outputs.  This was developed with reference to the https://www.geeksforgeeks.org/ website.
 
-**-  A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed.  A quit button allows the user to close the GUI and for the program to complete correctly.  This was developed with reference to https://www.delftstack.com/, using 'root.quit'.
+**-  A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed, but a quit button allows this to be achieved more neatly.  This was developed with reference to https://www.delftstack.com/.
 
-Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved with reference to the *matplotlib* 'List of named colours' (Hunter et al, 2021b).
+Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was completed with reference to the *matplotlib* 'List of named colours' (Hunter et al, 2021b).
 
 
 #### 6. Write information out to a file
 A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, and mode 'w'to write or overwrite to that location (Python Foundation, May 2021a).  
 
-It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - however the code could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but again this could be renamed for future use.
+Tthe current date was included in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - however the code could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but again this could be renamed for future use.
 
 
 ### Testing 
 Three principle types of testing were employed in development of the program: 
 
-1. Firstly, tests were written within source code and performed as each section of the program was developed.  These either tested the program data or dummy data sets to check whether the code produced expected results.  The majority of these tests were then commented out so as to be available for future amendments. 
+1. Tests were written within source code and performed as each section of the program was developed.  These either tested the program data or dummy data sets to check whether the code produced expected results.  The majority of these tests were then commented out so as to be available for future testing.
 
 2. Timing tests were included for the 'find_volume' and 'ice_pull' functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. The code was written with reference to the Python Library (Python Software Foundation, May 2021c) and https://www.guru99.com/.
 
