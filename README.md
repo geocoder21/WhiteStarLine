@@ -13,6 +13,7 @@ The information is presented on a Graphical User Interface (GUI) and is also wri
 - towing_model.py           <i> Model </i>
 - data_io.py                <i> Code for reading in and writing out data </i>
 - License                   <i> Apache 2.0 license </i>
+- iceberg_analysis.txt      <i> Data output file </i>
 </pre>
 These are also available via https://github.com/geocoder21/WhiteStarLine 
 
