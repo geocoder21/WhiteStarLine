@@ -88,7 +88,7 @@ A number of issues were identified through development and testing of the code. 
 
 ### Resolved issues
 
-**1. ice_pull function output**. the function was initially written as follows:
+**- ice_pull function output**. the function was initially written as follows:
 ```
 def ice_pull(mass):
     if mass < max_tow:
@@ -98,7 +98,7 @@ def ice_pull(mass):
 ```
 When the program was run the function appeared to be working, as the large iceberg gained a False output.  However, the *bloctest* on this function showed that no value was being returned, so the function defaulted to False.  The function was updated to include `return True` and `return False` and then worked correctly.
 
-**2. volume function output**. The oringal code for this function was as follows:
+**- volume function output**. The oringal code for this function was as follows:
 ```
 def find_volume(radar, lidar):
     volume = 0
@@ -110,7 +110,7 @@ def find_volume(radar, lidar):
 ```
 Again, this appeared to work correctly during debugging, but an issue was highlighted through *doctest*.  It became apparent that if the 'for loop' condition was not met then an integer value of 0 was returned, but if the condition was met then a float was returned.  This was overcome by updating the final line to `return(float(volume))`
 
-**3. program not completing**: initially the program did not stop unless the user manually closed the GUI.  This issue was overcome by adding a 'quit' button to the GUI (also see above).
+**- program not completing**: initially the program did not stop unless the user manually closed the GUI.  This issue was overcome by adding a 'quit' button to the GUI (also see above).
 
 
 ### Unresolved issues
