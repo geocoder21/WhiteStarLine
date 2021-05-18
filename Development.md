@@ -79,15 +79,15 @@ Three principle types of testing were employed in development of the program:
 ### Finalising and documenting code
 Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.
 
-### Issues and solutions
+## Issues and solutions
 A number of issues were identified through development and testing of the code.  The most significant of these are outlined below.
 
-## Resolved issues
+### Resolved issues
 1. ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
 2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
 
 
-## Unresolved issues
+### Unresolved issues
 - only works for single iceberg
 - no error codes, e.g. if radar data >100 but lidar data is missing
 
