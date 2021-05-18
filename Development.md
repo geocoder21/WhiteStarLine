@@ -77,16 +77,24 @@ Three principle types of testing were employed in development of the program:
 
 
 ### Finalising and documenting code
-Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.
+Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.  The markdown documents were created with reference to Cone's (2021) guide to syntax.
 
 ## Issues and solutions
 A number of issues were identified through development and testing of the code.  The most significant of these are outlined below.
 
 ### Resolved issues
-1. ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
+1. **ice_pull True / False**: the function was initially written as follows:
+```
+def ice_pull(mass):
+if mass < max_tow:
+        True
+    else:
+        False
+```
+
+identified through testing that would always have been False as Return statements omitted
 2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
-```
-```
+
 
 ### Unresolved issues
 - only works for single iceberg
@@ -94,9 +102,13 @@ A number of issues were identified through development and testing of the code. 
 
 ## Further development
 
+- Mulitple icebergs
+- Grid mesh display
 - Tidy code by removing tests where possible
 
 ## References
+
+Cone, M. 2021. *Markdown Guide: Basic Syntax*. [Online]. [Accessed 18 May 2021]. Available from https://www.markdownguide.org/basic-syntax/ 
 
 Data to Fish website, July 2020. *How to Convert Pandas DataFrame into a List*. [Online]. [Accessed 17 May 2021]. Available from https://datatofish.com/convert-pandas-dataframe-to-list/
 
