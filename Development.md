@@ -73,16 +73,21 @@ Three principle types of testing were employed in development of the program:
 
 2. Timing tests were included for the 'find_volume' and 'ice_pull' functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. The code was written with reference to the Python Library (Python Software Foundation, May 2021c) and https://www.guru99.com/.
 
-3. Finally, the *doctest* module was imported and tests built into the functions in the main program.  This allowed for testing of a range of conditions. Further information on *doctest* is available through the Python Library (Python Software Foundation, May 2021d), and in addition Tagliaferri (2021) was referenced in order to formulate the tests.
+3. Finally, the *doctest* module was imported and tests built into the functions within the main program.  This allowed for testing of a range of conditions. Further information on *doctest* is available through the Python Library (Python Software Foundation, May 2021d), and in addition Tagliaferri (2021) was referenced in order to formulate the tests.
 
-### Issues and solutions
-- ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
-- volume function returned int 0 if for loop condition not met.  Again, identified through testing.
 
 ### Finalising and documenting code
 Docstrings were added to the code to increase usability for other users of the code, written in line with PEP 257 (Goodger, Jun 2001).  A linter was then used in the IDE to ensure that the code was compliant with PEP 8 wherever possible (Van Rossum et al, Aug 2013).  Additional in-line comments were included where clarification might be necessary, and the majority of tests commented out to reduce processing time.  Finally the Apache 2.0 license was selected and a README file created to facilitate sharing through GitHub.
 
-### Unresolved issues
+### Issues and solutions
+A number of issues were identified through development and testing of the code.  The most significant of these are outlined below.
+
+## Resolved issues
+1. ice_pull True / False issue: identified through testing that would always have been False as Return statements omitted
+2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
+
+
+## Unresolved issues
 - only works for single iceberg
 - no error codes, e.g. if radar data >100 but lidar data is missing
 
