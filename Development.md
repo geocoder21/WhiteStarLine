@@ -26,6 +26,7 @@ The web addresses for the raster data were entered within program parameters and
 #### 2. Identify ice and extract lidar height data
 
 > Radar value >= 100 is ice
+
 > 1 lidar unit = 10cm
 
 Given the parameters provided within task guidance (above) it was possible to identify raster pixels that contained ice and then extract the lidar value. It was decided to include both elements within a single function in order to increase efficiency, so the 'find_volume' function first identifies pixels containing ice, and then adds the lidar value in metres for that pixel to a 'volume' variable.  Since each pixel has an area of 1m by 1m, this returns a cumulative volume value for the ice above the water.
@@ -35,6 +36,7 @@ This function is called within the main program, using the radar and lidar data 
 #### 3. Assess volume and mass of iceberg
 
 > 10% of iceberg mass is above sea level
+
 > ice density = 900kg/m3
 
 Volume and mass of the whole iceberg could then be caluculated ('total_volume' and 'total_mass' variables within the program).  Since this information would be required to be displayed on a GUI and written out to a file, these were defined as statements ('mass_statement' and 'volume_statement').
