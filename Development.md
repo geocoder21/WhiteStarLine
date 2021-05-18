@@ -74,7 +74,7 @@ Three principle types of testing were employed in development of the program:
 
 1. Tests were written within source code and performed as each section of the program was developed.  These either tested the program data or dummy data sets to check whether the code produced expected results.  The majority of these tests were then commented out so as to be available for future testing.
 
-2. Timing tests were included for the 'find_volume' and 'ice_pull' functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. The code was written with reference to the Python Library (Python Software Foundation, May 2021c) and https://www.guru99.com/.
+2. Timing tests were included for the 'find_volume' and 'ice_pull' functions, using the imported *timeit* module.  This tests the time taken to run a small segment of code within a program, in this case producing a result in seconds and milliseconds. The code was written with reference to the Python Library (Python Software Foundation, May 2021c) and https://www.guru99.com/.  The 'find_volume' function is realitively slow, but a more efficient solution was not found at this stage.
 
 3. Finally, the *doctest* module was imported and tests built into the functions within the main program.  This allowed for testing of a range of conditions. Further information on *doctest* is available through the Python Library (Python Software Foundation, May 2021d), and in addition Tagliaferri (2021) was referenced in order to formulate the tests.
 

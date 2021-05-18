@@ -1,4 +1,4 @@
-2021-05-17 14:50:48.433628
+2021-05-18 10:52:35.769148
 Total iceberg mass = 129739500.0 kg
 Total iceberg volume = 144155.0 m3
 Iceberg is too large to be towed
