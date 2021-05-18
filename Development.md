@@ -5,6 +5,8 @@ The README in the project file outlines the task, context, and project contents.
 ## Design process
 
 ### Algorithm
+The following algorithm was prepared to meet the task requirements:
+
 1. read in radar and lidar data
 2. identify ice from radar data and for cells containing ice, extract lidar height data
 3. assess total volume and mass of iceberg
@@ -17,7 +19,7 @@ A new Python file, named 'towing_model.py' was created to contain the program. S
 
 The radar and lidar data for this task were supplied as separate raster files, covering a 300m by 300m area of sea.  The files were laid out in comma separated value (csv) format, with one line per image line and reading from top left of the grid to bottom right.
 
-It was decided to use the *pandas* data manipulation library (The pandas development team, Feb 2020) to read in this data as this provided  more efficient code than the alternative of Python requests and csv reader modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
+It was decided to use the *pandas* data manipulation library (the pandas development team, Feb 2020) to read in this data as this provided  more efficient code than the alternative combination of Python *requests* and *csv reader* modules.  Source documentation and other guides were used to develop code to read data into a pandas DataFrame and then extract this to a 2D list.  Two sites were used to assist in development of the 'read_data' function: https://pandas.pydata.org/ and https://datatofish.com/.
 
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
@@ -42,7 +44,7 @@ Volume and mass of the whole iceberg could then be caluculated ('total_volume' a
 ```
 iceberg mass > 36 million kg cannot be pulled
 ```
-An 'ice_pull' function was developed to return a True or False Boolean value, depending on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
+An 'ice_pull' function was developed to return a True or False Boolean value, dependent on the total mass of the iceberg.  This included a 'max_tow' variable so that the value could be updated in program parameters if needed (e.g. if a more powerful iceberg-towing tug were available).  This was run through the main program, with the output entered into the 'pull_statement'.
 
 #### 5. Display plots and information on a GUI
 The task required display of both radar and lidar data, along with total mass and volume for the iceberg, and whether it could be pulled.  The data display was created using *matplotlib* external library and *tkinter* standard library; these allow data to be plotted and visualised within a GUI (Van Rossum, 2020).  
@@ -53,14 +55,14 @@ A basic canvas was created with reference to the course notes (Evans, 2021).  Fu
 
 **b)  A text widget** to display mass, volume and whether the iceberg could be pulled.  This was developed with reference to the https://www.geeksforgeeks.org/ website.
 
-**c)  A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed.  A quit button allows the user to close the GUI and for the program to complete correctly.  This was developed with reference to https://www.delftstack.com/, using root.quit.
+**c)  A 'quit' button** to allow the user to exit the GUI and the program to complete.  During early testing it became apparent that the program did not complete unless the GUI was closed.  A quit button allows the user to close the GUI and for the program to complete correctly.  This was developed with reference to https://www.delftstack.com/, using 'root.quit'.
 
-Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved using the matplotlib 'List of named colours' (Hunter et al, 2021b).
+Finally the colours of plots, text and widgets were updated to improve the appearance of the GUI.  This was achieved with reference to the *matplotlib* 'List of named colours' (Hunter et al, 2021b).
 
 #### 6. Write information out to a file
-A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, using mode 'w'to write or overwrite to that location (Python Foundation, May 2021a).  
+A 'write_data'function was created in the 'data_io.py'file, using the 'open' method to create a new file, and mode 'w'to write or overwrite to that location (Python Foundation, May 2021a).  
 
-It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - this could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but this could be renamed for future use.
+It was decided to include the current date in the file written out; this provides context for the data and also allows the user to check that the output file was updated correctly.  In order to achieve this the *datetime* module was imported and a date variable created.  This produced a 'naive' date - however the code could be updated to account for different time zones if required. The output file was named 'iceberg_analysis.txt', but again this could be renamed for future use.
 
 
 
