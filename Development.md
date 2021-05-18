@@ -85,7 +85,7 @@ Docstrings were added to the code to increase usability for other users of the c
 A number of issues were identified through development and testing of the code.  The most significant of these are outlined below.
 
 ### Resolved issues
-1. **ice_pull True / False**: the function was initially written as follows:
+1. **ice_pull function output**: the function was initially written as follows:
 ```
 def ice_pull(mass):
     if mass < max_tow:
@@ -93,8 +93,7 @@ def ice_pull(mass):
     else:
         False
 ```
-
-identified through testing that would always have been False as Return statements omitted
+When the program was run the function appeared to be working, as the large iceberg gained a False output.  However, the *bloctest* on this function showed that no value was being returned, so the function defaulted to False.  The function was updated to include `return True` and `return False` and then worked correctly.
 
 2. volume function returned int 0 if for loop condition not met.  Again, identified through testing.
 
