@@ -133,7 +133,7 @@ A new 2D list would need to be set up, and icebergs identified as separate entit
 
 #### 3D plot for lidar display
 
-It would be interesting to add a 3D plot for the lidar data, to show contours above sea level.  Some investigation was carried out into this, using the *tkinter* wireframe, however the code was not developed sufficiently to be included.
+It would be interesting to add a 3D plot for the lidar data, to show contours above sea level.  Some investigation was carried out into this, using the *tkinter* wireframe and referencing VanderPlas (2016), however the code was not developed sufficiently to be included.
 
 #### More interactive GUI
 
@@ -176,6 +176,8 @@ Python Software Foundation, May 2021c. *timeit - Measure execution timeof small 
 Python Software Foundation, May 2021d. *doctest - Test interactive Python examples.* [Online]. [Accessed 17 May 2021]. Available from https://docs.python.org/3/library/timeit.html
 
 Tagliaferri, L. Feb 2021. *How To Write Doctests in Python*. [Accessed 17 May 2021]. Available from https://www.digitalocean.com/community/tutorials/how-to-write-doctests-in-python
+
+VanderPlas, J. 2016. *Python Data Science Handbook: Essential Tools for Working with Data.* O'Reilly Media 
 
 Van Rossum, G., Warsaw, B., Coghlan, N. Aug 2013. *PEP 8 -- Style Guide for Python Code*, Python Software Foundation.  [Online]. [Accessed 17 May 2021]. Available fromhttps://www.python.org/dev/peps/pep-0008/
 
