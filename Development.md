@@ -24,10 +24,10 @@ It was decided to use the *pandas* data manipulation library (the pandas develop
 The web addresses for the raster data were entered within program parameters and the 'read_data' function called within the main programe for both radar and lidar data.  Once read in the data was printed and displayed on a test plot, using matplotlib; once checked the plot code was removed.
 
 #### 2. Identify ice and extract lidar height data
-```
-Radar value >= 100 is ice
-1 lidar unit = 10cm
-```
+
+> Radar value >= 100 is ice
+> 1 lidar unit = 10cm
+
 Given the parameters provided within task guidance (above) it was possible to identify raster pixels that contained ice and then extract the lidar value. It was decided to include both elements within a single function in order to increase efficiency, so the 'find_volume' function first identifies pixels containing ice, and then adds the lidar value in metres for that pixel to a 'volume' variable.  Since each pixel has an area of 1m by 1m, this returns a cumulative volume value for the ice above the water.
 
 This function is called within the main program, using the radar and lidar data read in during the previous step.
