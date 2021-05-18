@@ -86,7 +86,7 @@ A number of issues were identified through development and testing of the code. 
 1. **ice_pull True / False**: the function was initially written as follows:
 ```
 def ice_pull(mass):
-if mass < max_tow:
+    if mass < max_tow:
         True
     else:
         False
