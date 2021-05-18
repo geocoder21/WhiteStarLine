@@ -51,4 +51,4 @@ Full details of development processes and testing are given elsewhere within thi
 
 
 ## License
-This project is available under the Apache 2.0 License.  See the LICENSE for further details.
+This project is available under the Apache 2.0 License.  See the [LICENSE](https://github.com/geocoder21/WhiteStarLine/blob/main/LICENSE) for further details.
